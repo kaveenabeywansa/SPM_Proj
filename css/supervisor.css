@@ -1,0 +1,27 @@
+.content{
+    padding-left: 16%;
+}
+body {
+    background: url(../images/bck.png) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Dosis', sans-serif;
+}
+table{
+    width: 100%;
+}
+th, td {
+    border-bottom: 1px solid #ddd;
+}
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:nth-child(even) {background-color: #FBFCFC  ;}
+
+tr:hover {background-color: #A9CCE3;}
