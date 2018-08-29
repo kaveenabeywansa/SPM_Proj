@@ -1,21 +1,18 @@
-.content{
-    padding-left: 16%;
+
+.supform{
+    background-color:#FAFAFA;
+    padding: 10%;
+    opacity: 0.8;
 }
-body {
-    background: url(../images/bck.png) no-repeat center;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -ms-background-size: cover;
-    background-attachment: fixed;
-    font-family: 'Dosis', sans-serif;
+h1{
+    font-size: 200%;
 }
 table{
     width: 100%;
 }
 th, td {
     border-bottom: 1px solid #ddd;
+    font-size: 150%;
 }
 th {
     background-color: #4CAF50;
