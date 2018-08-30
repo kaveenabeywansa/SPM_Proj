@@ -1,5 +1,6 @@
-<!Doctype html>
-<html>
+<?php
+include('session_connect.php')
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 
