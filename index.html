@@ -1,133 +1,578 @@
 <!--
-	Author: W3layouts
-	Author URL: http://w3layouts.com
-	License: Creative Commons Attribution 3.0 Unported
-	License URL: http://creativecommons.org/licenses/by/3.0/
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+
 <!DOCTYPE html>
 <html lang="zxx">
 
 <head>
-    <title>Quick Signin & Signup form Flat Responsive Widget Template :: w3layouts</title>
-    <!-- Meta-Tags -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <meta name="keywords" content="Quick Signin & Signup form a Responsive Web Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible Web Template, Smartphone Compatible Web Template, Free Webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
-    <script>
-        addEventListener("load", function () {
-            setTimeout(hideURLbar, 0);
-        }, false);
+	<title>Home</title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords" content="Fabricate Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"
+	/>
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
 
-        function hideURLbar() {
-            window.scrollTo(0, 1);
-        }
-    </script>
-    <!-- //Meta-Tags -->
-    <!-- Index-Page-CSS -->
-    <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
-    <!-- onlinefonts -->
-    <link href="//fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800" rel="stylesheet">
-    <!-- //Custom-Stylesheet-Links -->
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- //Meta tag Keywords -->
+
+	<!-- Custom-Files -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Bootstrap-Core-CSS -->
+	<link rel="stylesheet" href="css/lightbox.css">
+	<!-- gallery light box -->
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+	<!-- Style-CSS -->
+	<link rel="stylesheet" href="css/fontawesome-all.css">
+	<!-- Font-Awesome-Icons-CSS -->
+	<!-- //Custom-Files -->
+
+	<!-- Web-Fonts -->
+	<link href="//fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+	<!-- //Web-Fonts -->
+
 </head>
 
-<body>
-    <header>
-        <h1 class="title-agile text-center">Quick Signin & Signup form</h1>
-    </header>
-    <!-- //header -->
-    <section class="login-wrap">
-        <div class="main_w3agile">
-            <input id="tab-1" type="radio" name="tab" class="sign-in" checked>
-            <label for="tab-1" class="tab">Sign In</label>
-            <input id="tab-2" type="radio" name="tab" class="sign-up">
-            <label for="tab-2" class="tab">Sign Up</label>
-            <div class="login-form">
-                <!-- signin form -->
-                <div class="signin_wthree">
-                    <form method="post" action="#">
-                        <div class="group">
-                            <label for="user" class="label">Username</label>
-                            <input id="user" type="text" class="input" required>
-                        </div>
-                        <div class="group">
-                            <label for="pass" class="label">Password</label>
-                            <input id="pass" type="password" class="input" data-type="password" required>
-                        </div>
-                        <div class="group">
-                            <input id="check" type="checkbox" class="check" checked>
-                            <label for="check">
-                                <span class="icon"></span> Keep me Signed in</label>
-                        </div>
-                        <div class="group">
-                            <input type="submit" class="button" value="Sign In">
-                        </div>
-                        <div class="hr"></div>
-                        <div class="foot-lnk">
-                            <h2><a href="#">Forgot Password?</a></h2>
-                        </div>
-                    </form>
-                </div>
-                <!-- //signin form -->
-                <!-- signup form -->
-                <div class="signup_wthree">
-                    <form method="post" action="#">
-                        <div class="group">
-                            <label for="user1" class="label">Username</label>
-                            <input id="user1" type="text" class="input" required>
-                        </div>
-                        <div class="group">
-                            <label for="password1" class="label">Password</label>
-                            <input id="password1" type="password" class="input" data-type="password" required>
-                        </div>
-                        <div class="group">
-                            <label for="password2" class="label">Re-Enter Password</label>
-                            <input id="password2" type="password" class="input" data-type="password" required>
-                        </div>
-                        <div class="group">
-                            <label for="email" class="label">Email Address</label>
-                            <input id="email" type="email" class="input" required>
-                        </div>
-                        <div class="group">
-                            <input type="submit" class="button" value="Sign Up">
-                        </div>
-                        <div class="hr"></div>
-                        <div class="foot-lnk">
-                            <label for="tab-1">Already Member? </label>
-                        </div>
-                    </form>
-                </div>
-                <!-- //signup form -->
-            </div>
-        </div>
-    </section>
-    <!-- //section -->
-    <footer>
-        <div class="copy-wthree text-center">
-            <p>© 2018 Quick Signin & Signup form. All rights reserved | Design by
-                <a href="http://w3layouts.com">W3layouts</a>
-            </p>
-        </div>
-    </footer>
-    <!-- //footer -->
-    <!-- script for password match -->
-    <script>
-        window.onload = function () {
-            document.getElementById("password1").onchange = validatePassword;
-            document.getElementById("password2").onchange = validatePassword;
-        }
+<body data-spy="scroll" data-target=".fixed-top">
+	<!-- header -->
+	<header>
+		<!-- navbar -->
+		<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="index.html">
+				<span>I</span>ntern<span>s</span>hip</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+			 aria-expanded="false" aria-label="Toggle navigation">
+				<i class="fas fa-bars"></i>
+			</button>
 
-        function validatePassword() {
-            var pass2 = document.getElementById("password2").value;
-            var pass1 = document.getElementById("password1").value;
-            if (pass1 != pass2)
-                document.getElementById("password2").setCustomValidity("Passwords Don't Match");
-            else
-                document.getElementById("password2").setCustomValidity('');
-            //empty string means no validation error
-        }
-    </script>
-    <!-- script for password match -->
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ml-auto text-center mr-lg-5">
+					<li class="nav-item active mr-lg-2 mb-lg-0 mb-2">
+						<a class="nav-link" href="index.html">Home
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+					<li class="nav-item mr-lg-2 mb-lg-0 mb-2">
+						<a class="nav-link scroll" href="#about">About Us</a>
+					</li>
+					<li class="nav-item mr-lg-2 mb-lg-0 mb-2">
+						<a class="nav-link scroll" href="#services">Services</a>
+					</li>
+					<li class="nav-item mr-lg-2 mb-lg-0 mb-2">
+						<a class="nav-link scroll" href="#team">Our Team</a>
+					</li>
+					<li class="nav-item mr-lg-2 mb-lg-0 mb-2">
+						<a class="nav-link scroll" href="#contact">Contact Us</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="login.html">Sign In | Sign Up</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<!-- //navbar ends here -->
+
+		<!-- banner -->
+		<div class="banner-w3l">
+			<div class="container">
+				<div class="banner-left-wthree">
+					<h5 class="text-white text-capitalize">welcome to Internship Management</h5>
+					<h3 class="mt-2 mb-lg-4 mb-sm-3 mb-2 text-white font-weight-bold">Easy Internship Workflow</h3>
+					<p>We offer the most complete industrial solutions in the country, for the research, design and development of materials.</p>
+					<a href="#contact" class="btn scroll mt-md-5 mt-4">Contact Us</a>
+				</div>
+			</div>
+		</div>
+		<!-- //banner -->
+	</header>
+	<!-- //header -->
+
+	<!-- Stats-->
+	<div class="stats-w3layouts py-5" id="about">
+		<div class="container py-xl-5 py-lg-3">
+			<h3 class="tittle text-center font-weight-bold text-uppercase mb-sm-5 mb-4">
+				<span class="font-weight-bold text-center">W</span>Welcome</h3>
+			<div class="stats-info numscroller">
+				<div class="row">
+					<div class="col-4 stats-grid-w3-agile text-center border-right">
+						<div class='numscroller font-weight-bold' data-slno='1' data-min='0' data-max='220' data-delay='.5' data-increment="1">220</div>
+						<p class="text-capitalize">awards winning</p>
+					</div>
+					<div class="col-8 right-text-about pl-sm-5 pl-3 mt-lg-3">
+						<p>
+							<i class="fas fa-quote-left text-dark mr-2"></i>This web application saved a lot of time of me. Very easy and simple to use. Keep it up. Thank you.
+							<i class="fas fa-quote-right  text-dark ml-2"> - 3rd year 1st sem student</i>
+						</p>
+					</div>
+				</div>
+				<div class="row my-4">
+					<div class="col-4 stats-grid-w3-agile text-center border-right">
+						<div class='numscroller font-weight-bold' data-slno='1' data-min='0' data-max='330' data-delay='.5' data-increment="1">330</div>
+						<p class="text-capitalize">satisfied customers</p>
+					</div>
+					<div class="col-8 right-text-about pl-sm-5 pl-3 mt-lg-3">
+						<p>
+							<i class="fas fa-quote-left text-dark mr-2"></i>This web application saved a lot of time of me. Very easy and simple to use. Keep it up. Thank you.
+							<i class="fas fa-quote-right  text-dark ml-2"> - 3rd year 2nd sem student</i>
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-4 stats-grid-w3-agile text-center border-right">
+						<div class='numscroller font-weight-bold' data-slno='1' data-min='0' data-max='400' data-delay='.5' data-increment="1">400</div>
+						<p class="text-capitalize">happy clients</p>
+					</div>
+					<div class="col-8 right-text-about pl-sm-5 pl-3 mt-lg-3">
+						<p>
+							<i class="fas fa-quote-left text-dark mr-2"></i>This web application saved a lot of time of me. Very easy and simple to use. Keep it up. Thank you.
+							<i class="fas fa-quote-right  text-dark ml-2"> - 3rd year 1st sem student</i>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //Stats -->
+
+	<!-- middle section -->
+	<div class="middle-w3l text-center py-sm-5 py-4">
+		<div class="container py-xl-5 py-lg-3">
+			<p class="text-white mx-auto font-weight-bold">We may get to the point where the only way of saving the world will be for industrial civilization to collapse.</p>
+		</div>
+	</div>
+	<!-- //middle section -->
+
+	<!-- Services -->
+	<div class="serives-agile py-5" id="services">
+		<div class="container py-xl-5 py-lg-3">
+			<h3 class="tittle text-center font-weight-bold text-uppercase mb-sm-5 mb-4">
+				<span class="font-weight-bold text-center">S</span>Our Services</h3>
+			<div class="row welcome-bottom">
+				<div class="col-sm-4 welcome-grid">
+					<i class="fab fa-gripfire"></i>
+					<h4 class="my-3">SLIIT Student Registration</h4>
+					<p>Ut enim ad minima veniam, quis nostrum ullam corporis suscipit laboriosam.</p>
+				</div>
+				<div class="col-sm-4 welcome-grid my-sm-0 my-4">
+					<i class="fas fa-tint"></i>
+					<h4 class="my-3">Upload Internship forms</h4>
+					<p>Ut enim ad minima veniam, quis nostrum ullam corporis suscipit laboriosam.</p>
+				</div>
+				<div class="col-sm-4 welcome-grid">
+					<i class="fas fa-flask"></i>
+					<h4 class="my-3">Company Allocation</h4>
+					<p>Ut enim ad minima veniam, quis nostrum ullam corporis suscipit laboriosam.</p>
+				</div>
+			</div>
+			<div class="row welcome-bottom">
+				<div class="col-sm-4 welcome-grid mt-sm-5 my-sm-0 my-4">
+					<i class="fas fa-ship"></i>
+					<h4 class="my-3">Supervisor Allocation</h4>
+					<p>Ut enim ad minima veniam, quis nostrum ullam corporis suscipit laboriosam.</p>
+				</div>
+				<div class="col-sm-4 welcome-grid mt-sm-5">
+					<i class="far fa-lightbulb"></i>
+					<h4 class="my-3">Internship Grading</h4>
+					<p>Ut enim ad minima veniam, quis nostrum ullam corporis suscipit laboriosam.</p>
+				</div>
+				<div class="col-sm-4 welcome-grid mt-sm-5 mt-4">
+					<i class="fas fa-fire-extinguisher"></i>
+					<h4 class="my-3">Student Profile</h4>
+					<p>Ut enim ad minima veniam, quis nostrum ullam corporis suscipit laboriosam.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Services -->
+
+	<!-- team -->
+	<div class="team py-5" id="team">
+		<div class="container py-xl-5 py-lg-3">
+			<h3 class="tittle text-center font-weight-bold text-uppercase mb-sm-5 mb-4">
+				<span class="font-weight-bold text-center">T</span>Our Team</h3>
+			<div class="row team-row">
+				<div class="col-md-3 col-6 team-grids">
+					<div class="team-agile-img">
+						<img src="images/t1.jpg" alt=" " class="img-fluid">
+						<div class="view-caption">
+							<div class="w3ls-info">
+								<h4>Minila</h4>
+							</div>
+							<ul>
+								<li>
+									<a href="#">
+										<i class="fab fa-facebook-f"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="fab fa-twitter"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="fab fa-google-plus-g"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-6 team-grids">
+					<div class="team-agile-img">
+						<img src="images/t4.jpg" alt=" " class="img-fluid">
+						<div class="view-caption">
+							<div class="w3ls-info">
+								<h4>Dhanu</h4>
+							</div>
+							<ul>
+								<li>
+									<a href="#">
+										<i class="fab fa-facebook-f"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="fab fa-twitter"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="fab fa-google-plus-g"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-6 team-grids mt-md-0 mt-4">
+					<div class="team-agile-img">
+						<img src="images/t3.jpg" alt=" " class="img-fluid">
+						<div class="view-caption">
+							<div class="w3ls-info">
+								<h4>Sandun</h4>
+							</div>
+							<ul>
+								<li>
+									<a href="#">
+										<i class="fab fa-facebook-f"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="fab fa-twitter"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="fab fa-google-plus-g"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-6 team-grids mt-md-0 mt-4">
+					<div class="team-agile-img">
+						<img src="images/t3.jpg" alt=" " class="img-fluid">
+						<div class="view-caption">
+							<div class="w3ls-info">
+								<h4>Kaveen</h4>
+							</div>
+							<ul>
+								<li>
+									<a href="#">
+										<i class="fab fa-facebook-f"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="fab fa-twitter"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="fab fa-google-plus-g"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-6 team-grids mt-md-0 mt-4"></div>
+				<div class="col-md-3 col-6 team-grids mt-md-0 mt-4">
+						<div class="team-agile-img">
+							<img src="images/t5.jpg" alt=" " class="img-fluid">
+							<div class="view-caption">
+								<div class="w3ls-info">
+									<h4>Viraj</h4>
+								</div>
+								<ul>
+									<li>
+										<a href="#">
+											<i class="fab fa-facebook-f"></i>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="fab fa-twitter"></i>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="fab fa-google-plus-g"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- //team -->
+
+	<!-- video section -->
+	<div class="video-w3l py-5" data-vide-bg="video/1">
+		<div class="container-fluid py-lg-5 py-md-4">
+			<div class="row py-xl-3">
+				<div class="col-lg-9 ">
+					<h2 class="video-agile text-capitalize text-white mb-2">looking an adequate solution for your company?</h2>
+					<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur, Nemo enim ipsam voluptatem
+						quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur</p>
+				</div>
+				<div class="col-lg-3">
+					<a href="#contact" class="btn scroll mt-4">Contact Us</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //video section -->
+
+	<!-- contact -->
+	<div class="contact-w3l py-5" id="contact">
+		<div class="container py-xl-5 py-lg-3">
+			<h3 class="tittle text-center font-weight-bold text-uppercase mb-sm-5 mb-4">
+				<span class="font-weight-bold text-center">C</span>Contact Us</h3>
+			<div class="row">
+				<div class="col-lg-6 contact-agileits-w3layouts">
+					<h4 class="contact-title text-uppercase text-dark mb-sm-4 mb-3">Our Address</h4>
+					<h5 class="font-weight-light text-dark">If you have any questions about the services we provide simply use the form below. We try and respond to all queries
+						and comments within 24 hours.</h5>
+					<div class="midd-contact my-xl-5 my-4 pl-4 border-left">
+						<h6 class="text-dark mb-2">Address & Direction:</h6>
+						<p>sed quia consequuntur magni dolores eos qui</p>
+					</div>
+					<p class="para-agileits-w3layouts">
+						<i class="fas fa-map-marker pr-3"></i>98, Kandy Road, Malabe</p>
+					<p class="para-agileits-w3layouts my-sm-3 my-2">
+						<i class="fas fa-phone pr-3"></i>032 625 4592</p>
+					<p class="para-agileits-w3layouts">
+						<i class="far fa-envelope-open pr-2"></i>
+						<a href="mailto:mail@example.com">info 1@example.com</a>
+					</p>
+					<p class="para-agileits-w3layouts mt-sm-3 my-2">
+						<i class="far fa-envelope-open pr-2"></i>
+						<a href="mailto:mail@example.com">info 2@example.com</a>
+					</p>
+				</div>
+				<div class="col-lg-6 regstr-r-w3-agileits mt-lg-0 mt-5">
+					<h4 class="contact-title text-uppercase text-dark mb-sm-4 mb-3">Get in Touch</h4>
+					<div class="form-bg-w3ls">
+						<form action="#" method="post">
+							<div class="form-group">
+								<input type="text" name="Name" class="form-control" placeholder="Name" required="">
+							</div>
+							<div class="form-group">
+								<input type="email" name="Email" class="form-control" placeholder="Email" required="">
+							</div>
+							<div class="form-group">
+								<input type="text" name="Subject" class="form-control" placeholder="Subject" required="">
+							</div>
+							<div class="form-group">
+								<input type="text" name="number" class="form-control" placeholder="Phone Number" required="">
+							</div>
+							<div class="form-group">
+								<textarea name="Message" class="form-control" placeholder="Message" required=""></textarea>
+							</div>
+							<input type="submit" value="Submit" class="button-w3layouts border text-uppercase">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //contact -->
+
+	<!-- map -->
+	<div class="map">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1859251.8642025779!2d-76.08274894689792!3d40.06224332601239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c0fb959e00409f%3A0x2cd27b07f83f6d8d!2sNew+Jersey%2C+USA!5e0!3m2!1sen!2sin!4v1474436926209"
+		 allowfullscreen></iframe>
+	</div>
+	<!-- //map -->
+
+	<!-- footer -->
+	<footer>
+		<div class="w3ls-footer-grids py-sm-4 py-3">
+			<div class="container py-xl-5 py-lg-3">
+				<div class="row">
+					<div class="col-md-4 w3l-footer">
+						<h1 class="mb-sm-3 mb-2">
+							<a href="index.html">
+								<span>I</span>ntern<span>s</span>hip</a>
+						</h1>
+						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
+							eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+					</div>
+					<div class="col-md-4 w3l-footer my-md-0 my-4">
+						<h3 class="mb-sm-3 mb-2">Address</h3>
+						<ul>
+							<li>
+								<i class="fas fa-location-arrow float-left"></i>
+								<p class="ml-4">Team Intelligence - Malabe</p>
+								<div class="clearfix"></div>
+							</li>
+							<li class="my-3">
+								<i class="fas fa-phone float-left"></i>
+								<p class="ml-4">1234567890</p>
+								<div class="clearfix"></div>
+							</li>
+							<li>
+								<i class="far fa-envelope-open float-left"></i>
+								<a href="mailto:info@example.com" class="ml-3">mail@example.com</a>
+								<div class="clearfix"></div>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-4 w3l-footer">
+						<h3 class="mb-sm-3 mb-2">Navigation</h3>
+						<div class="nav-w3-l">
+							<ul>
+								<li>
+									<a href="index.html">Home</a>
+								</li>
+								<li class="mt-2">
+									<a href="#about" class="scroll">About Us</a>
+								</li>
+								<li class="mt-2">
+									<a href="#services" class="scroll">Services</a>
+								</li>
+								<li class="mt-2">
+									<a href="#team" class="scroll">Team</a>
+								</li>
+								<li class="mt-2">
+									<a href="#contact" class="scroll">Contact Us</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="row border-top mt-4 pt-lg-4 pt-3 text-lg-left text-center">
+					<p class="col-lg-8 copy-right-grids mt-lg-1">© 2018 All Rights Reserved </p>
+					<div class="col-lg-4 agileinfo_social_icons mt-lg-0 mt-3">
+						<ul class="agileits_social_list">
+							<li>
+								<a href="#" class="w3_agile_facebook">
+									<i class="fab fa-facebook-f"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="agile_twitter">
+									<i class="fab fa-twitter"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="w3_agile_dribble">
+									<i class="fab fa-dribbble"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="w3_agile_google">
+									<i class="fab fa-google-plus-g"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- //footer -->
+
+
+	<!-- Js files -->
+	<!-- JavaScript -->
+	<script src="js/jquery-2.2.3.min.js"></script>
+	<!-- Default-JavaScript-File -->
+
+	<script src="js/bootstrap.js"></script>
+	<!-- Necessary-JavaScript-File-For-Bootstrap -->
+
+	<!-- stats numscroller-js-file -->
+	<script src="js/numscroller-1.0.js"></script>
+	<!-- //stats numscroller-js-file -->
+
+	<!-- gallery -->
+	<script src="js/lightbox-plus-jquery.min.js"></script>
+	<!-- //gallery -->
+
+	<!-- Video js -->
+	<script src="js/jquery.vide.min.js"></script>
+	<!-- //Video js -->
+
+	<!-- smooth scrolling -->
+	<script src="js/SmoothScroll.min.js"></script>
+	<!-- //smooth scrolling -->
+
+	<!-- start-smoth-scrolling -->
+	<script src="js/move-top.js"></script>
+	<script src="js/easing.js"></script>
+	<script>
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 1000);
+			});
+		});
+	</script>
+	<!-- start-smoth-scrolling -->
+
+	<!-- smooth scrolling-bottom-to-top -->
+	<script>
+		$(document).ready(function () {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+			$().UItoTop({
+				easingType: 'easeOutQuart'
+			});
+		});
+	</script>
+	<!-- //smooth scrolling-bottom-to-top -->
+
+
+	<!-- //Js files -->
+
 </body>
-<!-- //Body -->
 
 </html>
