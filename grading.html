@@ -59,7 +59,7 @@
 						<a class="nav-link" href="index.html">Home</a>
 					</li>
 					<li class="nav-item mr-lg-2 mb-lg-0 mb-2">
-						<a class="nav-link scroll" href="#about">Viva Shedule</a>
+						<a class="nav-link scroll" href="viva_shedule.html">Viva Shedule</a>
 					</li>
 					<li class="nav-item mr-lg-2 mb-lg-0 mb-2">
 						<a class="nav-link scroll" href="grading.html">Gradings</a>
@@ -84,34 +84,30 @@
 <body class="banner-w3l">
 		<div class="title-agile">
 
-        <h1 class="title-agile text-center">Viva Shedule</h1>
+        <h1 class="title-agile text-center">Grading</h1>
     
 		</div>
 	    <section class="login-wrap">
         <div class="main_w3agile">
          
             <input id="tab-2" type="radio" name="tab" class="sign-up" checked>
-            <label for="tab-2" class="tab">Viva</label>
+            <label for="tab-2" class="tab">Grading</label>
             <div class="login-form">
                
-                <!-- signup form -->
+                <!-- grading form -->
                 <div class="signup_wthree">
-                    <form method="post" action="shedule.php">
+                    <form method="post" action="#grade.php">
                         <div class="group">
 						 <div class="group">
                             <label for="email" class="label">Username</label>
                             <input id="Username" type="text" class="input" required>
                         </div>
-                            <label for="user1" class="label">Date</label>
-                            <input id="Date" type="date" class="input" required>
-                        </div>
-                        <div class="group">
-                            <label for="password1" class="label">Time</label>
-                            <input id="Time" type="time" class="input" required>
-                        </div>
-                        <div class="group">
-                            <label for="email" class="label">Venue</label>
-                            <input id="Venue" type="text" class="input" required>
+						<div class="group">
+                            <label for="user1" class="label">grading</label>
+                            <select id="myform" class="input">
+								 <option value="A">A</option>
+								  <option value="B">B</option>
+							</select>
                         </div>
                         <div class="group">
                             <input type="submit" class="button" value="Save">
@@ -119,7 +115,7 @@
                         
                     </form>
                 </div>
-                <!-- //signup form -->
+                <!-- //grading form -->
             </div>
         </div>
     </section>

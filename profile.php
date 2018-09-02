@@ -63,7 +63,7 @@ include('session_connect.php')
 						<a class="nav-link" href="viva_shedule.html">Viva Shedule</a>
 					</li>
 					<li class="nav-item mr-lg-2 mb-lg-0 mb-2">
-						<a class="nav-link scroll" href="#services">Gradings</a>
+						<a class="nav-link scroll" href="grading.html">Gradings</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#logout">Log out</a>
