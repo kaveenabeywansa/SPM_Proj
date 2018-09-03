@@ -1,5 +1,6 @@
 <?php
-	include('dbconnect.php');
+	session_start();
+	include('dbconnect_v.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +18,7 @@
 	<!-- Bootstrap-Core-CSS -->
 	<link rel="stylesheet" href="css/lightbox.css">
 	<!-- gallery light box -->
-	<link rel="stylesheet" href="css/style1.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/style1_v.css" type="text/css" media="all" />
 	<!-- Style-CSS -->
 	<link rel="stylesheet" href="css/fontawesome-all.css">
 	<!-- Font-Awesome-Icons-CSS -->
@@ -26,10 +27,11 @@
 	<link href="//fonts.googleapis.com/css?family=Acme" rel="stylesheet">
 	<link href="//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
 	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-    <!-- //Web-Fonts -->
+	<!-- //Web-Fonts -->
 	
-	<script src="js/bootstrap.js"></script>
 	<script src="js/jquery-2.2.3.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	
     
 </head>
 
@@ -54,10 +56,17 @@
 						</a>
 					</li>
 					<li class="nav-item mr-lg-2 mb-lg-0 mb-2">
-						<a class="nav-link" href="forms.html">Form Submission</a>
+						<a class="nav-link" href="forms_v.php">Form Submission</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="login.html">Sign In | Sign Up</a>
+						<?php
+							if(isset($_SESSION['username'])){
+								echo '<a class="nav-link" href="logout_v.php">Log Out</a>';
+							}
+							else{
+								echo '<a class="nav-link" href="login.html">Sign In | Sign Up</a>';
+							}
+						?>
 					</li>
 				</ul>
 			</div>

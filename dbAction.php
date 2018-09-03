@@ -1,5 +1,5 @@
 <?php
-    include('dbconnect.php');
+    include('dbconnect_v.php');
     
 //CompanyReg
     if(isset($_POST['allocate'])){

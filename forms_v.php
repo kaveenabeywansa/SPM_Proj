@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +16,7 @@
 	<!-- Bootstrap-Core-CSS -->
 	<link rel="stylesheet" href="css/lightbox.css">
 	<!-- gallery light box -->
-	<link rel="stylesheet" href="css/style1.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/style1_v.css" type="text/css" media="all" />
 	<!-- Style-CSS -->
 	<link rel="stylesheet" href="css/fontawesome-all.css">
 	<!-- Font-Awesome-Icons-CSS -->
@@ -51,7 +54,14 @@
                         </a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="login.html">Sign In | Sign Up</a>
+					<?php
+							if(isset($_SESSION['username'])){
+								echo '<a class="nav-link" href="logout_v.php">Log Out</a>';
+							}
+							else{
+								echo '<a class="nav-link" href="login.html">Sign In | Sign Up</a>';
+							}
+						?>
 					</li>
 				</ul>
 			</div>
@@ -92,6 +102,5 @@
     		</section>
 			<div>
 		<div>
-
 </body>
 </html>
