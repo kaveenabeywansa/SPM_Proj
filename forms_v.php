@@ -54,6 +54,7 @@
                         </a>
 					</li>
 					<li class="nav-item">
+					<!-- To check whether the user has logged in or not -->
 					<?php
 							if(isset($_SESSION['username'])){
 								echo '<a class="nav-link" href="logout_v.php">Log Out</a>';
@@ -89,7 +90,7 @@
 								<input type="submit" class="button" value="Submit" name="submit3" onclick="return confirm('Are you sure?');">
                             </div>
                             <div class="hr"></div>
-                            <h1 style="font: 25px bold black;">Form I-5 Submission</h1>
+                            <h1 style="font: 25px bold black;">Form I-6 Submission</h1>
                             <div class="group">
 								<input type="file" size="50" class="input" id="doc6" name="doc6" value="I-6 Form">
 							</div>

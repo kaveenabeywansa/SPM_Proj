@@ -1,4 +1,5 @@
 <?php
+    //Connection with the database
     $con=mysqli_connect('localhost','root','','ceylonlinux');
 
     if(mysqli_connect_errno()){
