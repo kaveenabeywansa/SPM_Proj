@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	// session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,8 +75,7 @@
 					<div class="login-form">
 						<form method="post" action="dbAction.php" enctype="multipart/form-data">
 							<div class="group">
-								<label for="doc" class="label">Document</label>
-								<input type="file" size="50" class="input" id="doc1" name="doc1" value="I-1 Form">
+								<input type="file" size="500" class="input" id="doc1" name="doc1">
 							</div>
 							<div class="group">
 								<input type="submit" class="button" value="Submit" name="submit1" onclick="return confirm('Are you sure?');">
@@ -84,7 +83,7 @@
                             <div class="hr"></div>
                             <h1 style="font: 25px bold black;">Form I-3 Submission</h1>
                             <div class="group">
-								<input type="file" size="50" class="input" id="doc3" name="doc3" value="I-3 Form">
+								<input type="file" size="50" class="input" id="doc3" name="doc3">
 							</div>
 							<div class="group">
 								<input type="submit" class="button" value="Submit" name="submit3" onclick="return confirm('Are you sure?');">
@@ -92,7 +91,7 @@
                             <div class="hr"></div>
                             <h1 style="font: 25px bold black;">Form I-6 Submission</h1>
                             <div class="group">
-								<input type="file" size="50" class="input" id="doc6" name="doc6" value="I-6 Form">
+								<input type="file" size="50" class="input" id="doc6" name="doc6">
 							</div>
 							<div class="group">
 								<input type="submit" class="button" value="Submit" name="submit6" onclick="return confirm('Are you sure?');">
