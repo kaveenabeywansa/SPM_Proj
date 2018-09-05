@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Sign In</title>
+    <title>Sign Up</title>
     <!-- Meta-Tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
@@ -114,60 +114,118 @@ function isNic(val)
 
 <body>
     <header>
-        <h1 class="title-agile text-center">Sign In</h1>
+        <h1 class="title-agile text-center">Sign Up Form</h1>
     </header>
     <!-- //header -->
+	
     <section class="login-wrap">
         <div class="main_w3agile">
 		
-			<input id="tab-1" type="radio" name="tab" class="sign-in" checked>
-            <label for="tab-1" class="tab">Sign In</label>           
+			
             <input id="tab-2" type="radio" name="tab" class="sign-up" checked>
             <label for="tab-2" class="tab">Sign Up</label>
             <div class="login-form">
-                <!-- signin form -->
-						<div class="signin_wthree">
-						<form method="post" action="#">
-                        <div class="group
-                            <label for="user1" class="label">Username</label>
+                
+                <!-- signup form -->
+						<div class="signup_wthree">
+						<form onsubmit="return validate()" method="post" action="#" >
+						</br>
+						
+						
+						<table>					
+						<hr> Personal Information </hr>
+						</br>
+						<div class="group">
+							<tr>
+                            <td><label for="user1" class="label">First Name</label></td>
+							<td><input id="user1" type="text"  required></td>
+						   </tr>
+						   
+                        </div>
+						
+                        <div class="group">
+                            <tr>
+							<td><label for="user1" class="label">Last Name</label></td>
+                            <td><input id="user1" type="text"  required></td>
+							</tr>
+						</div>
+						<div class="group">
+                            <tr>
+							<td><label for="user1" class="label">NIC/Passport No</label></td>
+                            <td><input id="nic" type="text"  required></td>
+							</tr>
+						</div>
+						</br>
+						</table>
+						
+						<table>
+						<hr> Account Information </hr>
+						</br>
+						
+						<div class="group">
+                            <tr>
+							<td><label for="email" class="label">Email Address</label></td>
+                            <td><input id="email" type="email" class="input" required></td>
+							</tr>
+                        </div>
+						
+						<div class="group">
+							<tr>
+                            <td><label for="password1" class="label">Password</label></td>
+                            <td><input id="password1" type="password" class="input" data-type="password" required></td>
+                        </tr>
+						</div>
+						
+                        <div class="group">
+						<tr>
+                            <td><label for="password2" class="label">Re-Enter Password</label></td>
+                            <td><input id="password2" type="password" class="input" data-type="password" required></td>
+							</tr>
+                        </div>
+						</br>
+						</table>
+						
+						
+						<table>
+						<hr> Contact Information </hr>
+						</br>
+						
+						<div class="group">
+						<tr>
+                            <td><label for="user1" class="label">Address</label></td>
+                            <td><input id="user1" type="textarea" class="input" required></td>
+							</tr>
+                        </div>
+						<!--
+						<div class="group">
+                            <label for="user1" class="label">City</label>
                             <input id="user1" type="text" class="input" required>
                         </div>
-                        <div class="group">
-                            <label for="password1" class="label">Password</label>
-                            <input id="password1" type="password" class="input" data-type="password" required>
+						<div class="group">
+                            <label for="user1" class="label">State</label>
+                            <input id="user1" type="text" class="input" required>
                         </div>
-                       <!-- <div class="group">
-                            <label for="password2" class="label">Re-Enter Password</label>
-                            <input id="password2" type="password" class="input" data-type="password" required>
+						---->
+						<div class="group">
+						<tr>
+                            <td><label for="user1" class="label">Mobile No</label></td>
+                            <td><input id="user1" type="text" class="input" required></td>
+							</tr>
                         </div>
-                        <div class="group">
-                            <label for="email" class="label">Email Address</label>
-                            <input id="email" type="email" class="input" required>
-                        </div>
-						----->
-
-                        <div class="group">
-                            <input id="check" type="checkbox" class="check" checked>
-                            <label for="check">
-                            <span class="icon"></span> Keep me Signed in</label>
-                        </div>
+						</table>
+						</br>
 						
-                        <div class="group">
-                            <input type="submit" class="button" value="Sign In">
+                         <div class="group">
+                            <input type="submit" class="button" value="Sign Up">
                         </div>
-						
-                        <div class="hr"></div>
+						<!--<div class="hr"></div>
                         <div class="foot-lnk">
-                            <h2><a href="ResetPwd.html">Forgot Password?</a></h2>
+                            <label for="tab-1">Already Member? </label>
                         </div>
-						
-						<div class="hr"></div>
-                        <div class="foot-lnk">
-                            <h2><a href="SignUp.html">New User</a></h2>
-                        </div>
-						
+						-->
                     </form>
                 </div>
+                <!-- //signup form -->
             </div>
         </div>
     </section>
