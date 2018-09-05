@@ -22,6 +22,92 @@
             window.scrollTo(0, 1);
         }
     </script>
+	
+	<script>
+
+function validate()
+{
+	var nic = document.getElementById("nic").value;
+	var password1 = document.getElementById("password1").value;
+	var confirmpass = document.getElementById("confirmPass").value;
+	
+	if(isNic(nic))
+		if(passValidate(password1))
+			if(confirmPass(password1,confirmpass))
+				return true;
+			else
+				return false
+		else
+			return false
+	else
+		return false;
+}
+function checkEmpty(val,field)
+{
+	if(val=="" || val==null)
+	{
+		alert("You cannot have "+field+" field empty !");
+		return true;
+	}else
+	{
+		return false;
+	}
+}
+function passValidate(val)
+{
+	if(!checkEmpty(val,"Password"))
+	{
+		if(val.length>=8)
+		{
+			return true;
+		}else
+		{
+			alert("Password should be atleast 8 characters !");
+			return false;
+		}
+	}else
+		return false;
+}
+function confirmPass(password1,password2)
+{
+	if(!checkEmpty(confirmpass,"Confirm Password"))
+	{
+		if(password1==password2)
+			return true;
+		else
+		{
+			alert("The passwords do not match !");
+			return false;
+		}
+	}else
+		return false;
+}
+function isNic(val)
+{
+	var temp = /^[0-9]+$/;
+	if(!checkEmpty(val,"nic"))
+	{
+		if(val.match(temp))
+		{
+			if(val.length==10)
+				return true;
+			else
+			{
+				alert("nic should consist of 9 digits + V !");
+				return false;
+			}
+		}else
+		{
+			alert("Verification code should only consist of Numeric characters !");
+			return false;
+		}
+	}else
+		return false;
+}
+
+</script>
+
+
     <!-- //Meta-Tags -->
     <!-- Index-Page-CSS -->
     <link rel="stylesheet" href="css/style1.css" type="text/css" media="all">
@@ -43,46 +129,114 @@
             <label for="tab-2" class="tab">Sign Up</label>
             <div class="login-form">
                 <!-- signin form -->
-                 <div class="signup_wthree">
-                    <form method="post" action="#">
-					</br>
-					<hr> Personal Information </hr>
-					</br>
-						<div class="group">
-                            <label for="user1" class="label">First Name</label>
+						<div class="signin_wthree">
+						<form method="post" action="#">
+                        <div class="group
+                            <label for="user1" class="label">Username</label>
                             <input id="user1" type="text" class="input" required>
                         </div>
                         <div class="group">
-                            <label for="user1" class="label">Last Name</label>
-                            <input id="user1" type="text" class="input" required>
-                        </div>
-						<div class="group">
-                            <label for="user1" class="label">NIC/Passport No</label>
-                            <input id="user1" type="text" class="input" required>
-                        </div>
-						</br>
-					<hr> Account Information </hr>
-					</br>
-						
-						<div class="group">
-                            <label for="email" class="label">Email Address</label>
-                            <input id="email" type="email" class="input" required>
-                        </div>
-						<div class="group">
                             <label for="password1" class="label">Password</label>
                             <input id="password1" type="password" class="input" data-type="password" required>
                         </div>
-                        <div class="group">
+                       <!-- <div class="group">
                             <label for="password2" class="label">Re-Enter Password</label>
                             <input id="password2" type="password" class="input" data-type="password" required>
                         </div>
-						</br>
-					<hr> Contact Information </hr>
-					</br>
-						<div class="group">
-                            <label for="user1" class="label">Address</label>
-                            <input id="user1" type="text" class="input" required>
+                        <div class="group">
+                            <label for="email" class="label">Email Address</label>
+                            <input id="email" type="email" class="input" required>
                         </div>
+						----->
+
+                        <div class="group">
+                            <input id="check" type="checkbox" class="check" checked>
+                            <label for="check">
+                            <span class="icon"></span> Keep me Signed in</label>
+                        </div>
+						
+                        <div class="group">
+                            <input type="submit" class="button" value="Sign In">
+                        </div>
+						
+                        <div class="hr"></div>
+                        <div class="foot-lnk">
+                            <h2><a href="ResetPwd.html">Forgot Password?</a></h2>
+                        </div>
+                    </form>
+                </div>
+                <!-- //signin form -->
+                <!-- signup form -->
+						<div class="signup_wthree">
+						<form method="post" action="#" >
+						</br>
+						
+						
+						<table>					
+						<hr> Personal Information </hr>
+						</br>
+						<div class="group">
+							<tr>
+                            <td><label for="user1" class="label">First Name</label></td>
+							<td><input id="user1" type="text"  required></td>
+						   </tr>
+						   
+                        </div>
+						
+                        <div class="group">
+                            <tr>
+							<td><label for="user1" class="label">Last Name</label></td>
+                            <td><input id="user1" type="text"  required></td>
+							</tr>
+						</div>
+						<div class="group">
+                            <tr>
+							<td><label for="user1" class="label">NIC/Passport No</label></td>
+                            <td><input id="nic" type="text"  required></td>
+							</tr>
+						</div>
+						</br>
+						</table>
+						
+						<table>
+						<hr> Account Information </hr>
+						</br>
+						
+						<div class="group">
+                            <tr>
+							<td><label for="email" class="label">Email Address</label></td>
+                            <td><input id="email" type="email" class="input" required></td>
+							</tr>
+                        </div>
+						
+						<div class="group">
+							<tr>
+                            <td><label for="password1" class="label">Password</label></td>
+                            <td><input id="password1" type="password" class="input" data-type="password" required></td>
+                        </tr>
+						</div>
+						
+                        <div class="group">
+						<tr>
+                            <td><label for="password2" class="label">Re-Enter Password</label></td>
+                            <td><input id="password2" type="password" class="input" data-type="password" required></td>
+							</tr>
+                        </div>
+						</br>
+						</table>
+						
+						
+						<table>
+						<hr> Contact Information </hr>
+						</br>
+						
+						<div class="group">
+						<tr>
+                            <td><label for="user1" class="label">Address</label></td>
+                            <td><input id="user1" type="textarea" class="input" required></td>
+							</tr>
+                        </div>
+						<!--
 						<div class="group">
                             <label for="user1" class="label">City</label>
                             <input id="user1" type="text" class="input" required>
@@ -91,51 +245,24 @@
                             <label for="user1" class="label">State</label>
                             <input id="user1" type="text" class="input" required>
                         </div>
+						---->
 						<div class="group">
-                            <label for="user1" class="label">Mobile No</label>
-                            <input id="user1" type="text" class="input" required>
+						<tr>
+                            <td><label for="user1" class="label">Mobile No</label></td>
+                            <td><input id="user1" type="text" class="input" required></td>
+							</tr>
                         </div>
-                        <div class="group">
-                            <input id="check" type="checkbox" class="check" checked>
-                            <label for="check">
-                                <span class="icon"></span> Keep me Signed in</label>
-                        </div>
-                        <div class="group">
-                            <input type="submit" class="button" value="Sign In">
-                        </div>
-                        <div class="hr"></div>
-                        <div class="foot-lnk">
-                            <h2><a href="#">Forgot Password?</a></h2>
-                        </div>
-                    </form>
-                </div>
-                <!-- //signin form -->
-                <!-- signup form -->
-                <div class="signup_wthree">
-                    <form method="post" action="#">
-                        <div class="group">
-                            <label for="user1" class="label">Username</label>
-                            <input id="user1" type="text" class="input" required>
-                        </div>
-                        <div class="group">
-                            <label for="password1" class="label">Password</label>
-                            <input id="password1" type="password" class="input" data-type="password" required>
-                        </div>
-                        <div class="group">
-                            <label for="password2" class="label">Re-Enter Password</label>
-                            <input id="password2" type="password" class="input" data-type="password" required>
-                        </div>
-                        <div class="group">
-                            <label for="email" class="label">Email Address</label>
-                            <input id="email" type="email" class="input" required>
-                        </div>
-                        <div class="group">
+						</table>
+						</br>
+						
+                         <div class="group">
                             <input type="submit" class="button" value="Sign Up">
                         </div>
-                        <div class="hr"></div>
+						<!--<div class="hr"></div>
                         <div class="foot-lnk">
                             <label for="tab-1">Already Member? </label>
                         </div>
+						-->
                     </form>
                 </div>
                 <!-- //signup form -->

@@ -307,6 +307,7 @@ h1.title-agile {
 .clearfix:after {
     clear: both;
     display: block
+	
 }
 
 a {
@@ -314,10 +315,11 @@ a {
     text-decoration: none
 }
 
+
 .login-wrap {
     margin: auto;
     max-width: 525px;
-    min-height: 725px;
+    min-height: 2000px;
     position: relative;
     background: url(../images/banner.jpg) no-repeat center;
     box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
@@ -336,6 +338,7 @@ a {
 
 .main_w3agile .signin_wthree,
 .main_w3agile .signup_wthree {
+
     top: 0;
     left: 0;
     right: 0;
@@ -370,7 +373,7 @@ a {
 }
 
 .login-form {
-    min-height: 345px;
+    min-height: 1000px;
     position: relative;
     perspective: 1000px;
     transform-style: preserve-3d;
@@ -642,7 +645,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light {
 .login-wrap1 {
     margin: auto;
     max-width: 725px;
-    min-height: 725px;
+    min-height: 5725px;
     position: relative;
     background: url(../images/banner.jpg) no-repeat center;
     box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
