@@ -12,7 +12,7 @@
         addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
         }, false);
-
+		
         function hideURLbar() {
             window.scrollTo(0, 1);
         }
@@ -78,27 +78,37 @@ function isEmail(val)
 	}else
 		return false;
 }
-function isNic(val)
+function isNic(cnic_no)
 {
-	var temp = /^[0-9][V]+$/;
-	if(!checkEmpty(val,"Nic"))
-	{
-		if(val.match(temp))
-		{
-			if(val.length==10)
-				return true;
-			else
-			{
-				alert("Nic should consist of 10 digits !");
-				return false;
-			}
-		}else
-		{
-			alert("Nic should only consist of Numeric characters + V sign!");
-			return false;
-		}
-	}else
-		return false;
+	//var temp = /^[0-9+]{9}[vV]{1}$/;
+	//if(!checkEmpty(val,"Nic"))
+	//{
+		//if(val.match(temp))
+		//{
+			//if(val.length==10)
+				//return true;
+			//else
+		//	{
+			//	alert("Nic should consist of 10 digits !");
+				//return false;
+			//}
+		//}else
+		//{
+			//alert("Nic should only consist of Numeric characters + V sign!");
+			//return false;
+		//}
+	//}else
+		//return false;-->
+cnic_no_regex = /^[0-9]{9}[v|V]{1}$/;
+
+if(cnic_no_regex.test(cnic_no)) 
+{
+    alert('Right');
+}
+else 
+{
+    alert('Wrong');
+}
 }
 
 </script>
@@ -128,7 +138,7 @@ function isNic(val)
                 
                 <!-- signup form -->
 						<div class="signup_wthree">
-						<form onsubmit="return validate()" method="post" action="#" >
+						<form onsubmit="return validate()" name="myForm1" method="post" action="Signup.php" >
 						</br>
 						
 						
@@ -138,7 +148,7 @@ function isNic(val)
 						<div class="group">
 							<tr>
                             <td><label for="user1" class="label">First Name</label></td>
-							<td><input id="user1" type="text"  required></td>
+							<td><input name="myForm1" id="fname" type="text"  required></td>
 						   </tr>
 						   
                         </div>
@@ -146,13 +156,13 @@ function isNic(val)
                         <div class="group">
                             <tr>
 							<td><label for="user1" class="label">Last Name</label></td>
-                            <td><input id="user1" type="text"  required></td>
+                            <td><input  name="myForm1" id="lname" type="text"  required></td>
 							</tr>
 						</div>
 						<div class="group">
                             <tr>
 							<td><label for="user1" class="label">NIC/Passport No</label></td>
-                            <td><input id="nic" type="text"  required></td>
+                            <td><input name="myForm1" id="nic" type="text"  required></td>
 							</tr>
 						</div>
 						</br>
@@ -165,21 +175,21 @@ function isNic(val)
 						<div class="group">
                             <tr>
 							<td><label for="email" class="label">Email Address</label></td>
-                            <td><input id="email" type="email" class="input" required></td>
+                            <td><input name="myForm1" id="email" type="email" class="input" required></td>
 							</tr>
                         </div>
 						
 						<div class="group">
 							<tr>
                             <td><label for="password1" class="label">Password</label></td>
-                            <td><input id="password1" type="password" class="input" data-type="password" required></td>
+                            <td><input name="myForm1" id="password1" type="password" class="input" data-type="password" required></td>
                         </tr>
 						</div>
 						
                         <div class="group">
 						<tr>
                             <td><label for="password2" class="label">Re-Enter Password</label></td>
-                            <td><input id="password2" type="password" class="input" data-type="password" required></td>
+                            <td><input name="myForm1" id="password2" type="password" class="input" data-type="password" required></td>
 							</tr>
                         </div>
 						</br>
@@ -193,23 +203,14 @@ function isNic(val)
 						<div class="group">
 						<tr>
                             <td><label for="user1" class="label">Address</label></td>
-                            <td><input id="user1" type="textarea" class="input" required></td>
+                            <td><input name="myForm1" id="Address" type="textarea" class="input" required></td>
 							</tr>
                         </div>
-						<!--
-						<div class="group">
-                            <label for="user1" class="label">City</label>
-                            <input id="user1" type="text" class="input" required>
-                        </div>
-						<div class="group">
-                            <label for="user1" class="label">State</label>
-                            <input id="user1" type="text" class="input" required>
-                        </div>
-						---->
+					
 						<div class="group">
 						<tr>
                             <td><label for="user1" class="label">Mobile No</label></td>
-                            <td><input id="user1" type="text" class="input" required></td>
+                            <td><input name="myForm1" id="Mobile" type="text" class="input" required></td>
 							</tr>
                         </div>
 						</table>
@@ -243,7 +244,7 @@ function isNic(val)
             document.getElementById("password1").onchange = validatePassword;
             document.getElementById("password2").onchange = validatePassword;
         }
-
+		
         function validatePassword() {
             var pass2 = document.getElementById("password2").value;
             var pass1 = document.getElementById("password1").value;
