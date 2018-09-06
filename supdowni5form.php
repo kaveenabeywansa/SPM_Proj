@@ -41,6 +41,9 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ml-auto text-center mr-lg-5">
                     <li class="nav-item mr-lg-2 mb-lg-0 mb-2">
+						<a class="nav-link" href="">Verify Students</a>
+                    </li>
+                    <li class="nav-item mr-lg-2 mb-lg-0 mb-2">
 						<a class="nav-link" href="supdowni1form">Fill Form I-1</a>
 					</li>
 					<li class="nav-item mr-lg-2 mb-lg-0 mb-2">
