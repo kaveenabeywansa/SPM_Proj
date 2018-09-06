@@ -68,9 +68,8 @@
                 exit();
             }
             else{
-                echo 'alert("error")';
+                echo "<script type='text/javascript'>alert('error');</script>";
                 header("Location: http://localhost/SPM_Proj/forms_v.php");
-                console.log("err6");
             }
         }
 		
@@ -79,16 +78,22 @@
 //Viva_schedule
     if(isset($_POST['schedule'])){
         if(isset($_SESSION['username'])){
-            $name=$_SESSION['username'];
+            $name=$_POST['name'];
             $date=$_POST['date'];
             $time=$_POST['time'];
             $venue=$_POST['venue'];
-                if(!mysqli_query($con,"insert into viva(It_number,date,time,venue) values('".$name."','".$date."','".$time."','".$venue."')")){
-                    echo 'alert("Error in submitting")';
-                    console.log("err7");
+            //Check whether fields are empty
+            if($name == '' && $date == '' && $time == '' && $venue == ''){
+
+            }
+            else{
+                if(mysqli_query($con,"insert into viva(It_number,Date,Time,Venue) values('".$name."','".$date."','".$time."','".$venue."')")){
+                    echo "<script type='text/javascript'>alert('hi');</script>";
                 }
                 header("Location: http://localhost/SPM_Proj/viva_schedule_v.php"); /* Redirect browser */
                 exit();
+            }
+                
         }
     }
 	mysqli_close($con);

@@ -1,5 +1,7 @@
 <?php
-	session_start();
+    session_start();
+	include('dbconnect_v.php');
+	if(!isset($_SESSION['username'])){	
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,7 +56,6 @@
                         </a>
 					</li>
 					<li class="nav-item">
-					<!-- To check whether the user has logged in or not -->
 					<?php
 							if(isset($_SESSION['username'])){
 								echo '<a class="nav-link" href="logout_v.php">Log Out</a>';
@@ -69,36 +70,42 @@
 		</nav>
 		<div class="container py-xl-5 py-lg-5">
 			<div class="container py-xl-5 py-lg-5">
-			<section class="login-wrap">
-				<div class="main_w3agile">
-					<h1 style="font: 25px bold black;">Form I-1 Submission</h1>
+			<section class="login-wrap1">
+				<div class="main_w3agile1">
+					<h1 style="font: 25px bold black;margin-left:40px;">Viva Schedule</h1>
 					<div class="login-form">
-						<!-- Forms to submit -->
-						<form method="post" action="dbAction.php" enctype="multipart/form-data">
-							<div class="group">
-								<input type="file" size="500" class="input" id="doc1" name="doc1">
-							</div>
-							<div class="group">
-								<input type="submit" class="button" value="Submit" name="submit1" onclick="return confirm('Are you sure?');">
-							</div>
-                            <div class="hr"></div>
-                            <h1 style="font: 25px bold black;">Form I-3 Submission</h1>
-                            <div class="group">
-								<input type="file" size="50" class="input" id="doc3" name="doc3">
-							</div>
-							<div class="group">
-								<input type="submit" class="button" value="Submit" name="submit3" onclick="return confirm('Are you sure?');">
-                            </div>
-                            <div class="hr"></div>
-                            <h1 style="font: 25px bold black;">Form I-6 Submission</h1>
-                            <div class="group">
-								<input type="file" size="50" class="input" id="doc6" name="doc6">
-							</div>
-							<div class="group">
-								<input type="submit" class="button" value="Submit" name="submit6" onclick="return confirm('Are you sure?');">
-							</div>
-						</form>
-						<!-- /Form to submit -->
+                    <table class="table">
+                        <thead>
+                            <tr>
+								<th scope="col">#</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Time</th>
+                                <th scope="col">Venue</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <?php
+                                $query="select * from student_forms where FormI_6 <> 'null'";
+								$result=mysqli_query($con,$query);
+								$i=1;
+                                while($row=mysqli_fetch_array($result)){
+                                    echo '<tr>
+										<form method="post" action="dbAction.php" onSubmit="validation()">
+											<th scope="row">'.($i++).'</th>
+											<td>'.$row['It_number'].'</td>
+											<input name="name" value="'.$row['It_number'].'" style="display:none;">
+											<td><input name="date" id="date" type="date" class="input" required></td>
+											<td><input name="time" id="time" type="text" class="input" style="width:100px;" required></td>
+											<td><input name="venue" id="venue" type="text" class="input" style="width:100px;" required></td>
+											<td><input type="submit" class="button" name="schedule" value="Schedule"></td>
+										</form>
+                                    </tr>';
+                                }
+                            ?>
+                        </tbody>
+                    </table>
 					</div>
 				</div>
     		</section>
@@ -106,3 +113,9 @@
 		<div>
 </body>
 </html>
+<?php
+	}
+	else{
+		echo 'Direct access to this site is not allowed';
+	}
+?>
