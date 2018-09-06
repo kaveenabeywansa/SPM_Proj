@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sign Up</title>
+    <!-- Meta-Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+   <!----<meta name="keywords" content="Quick Signin & Signup form a Responsive Web Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible Web Template, Smartphone Compatible Web Template, Free Webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
+    --->
+	<script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+		
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+	
+	<script>
+
+<script>
+
+function validate()
+{
+	var username = document.getElementById("username").value;
+	var password1 = document.getElementById("password1").value;
+	
+	
+		if(usernameValidate(username))
+			if(passValidate(username,password1))
+				return true;
+			else
+				return false
+		else
+			return false
+	
+}
+function checkEmpty(val,field)
+{
+	if(val=="" || val==null)
+	{
+		alert("You cannot have "+field+" field empty !");
+		return true;
+	}else
+	{
+		return false;
+	}
+}
+function passValidate(val)
+{
+	if(!checkEmpty(val,"password1"))
+	{
+		if(val.length>=8)
+		{
+			return true;
+		}else
+		{
+			alert("Password should be atleast 8 characters !");
+			return false;
+		}
+	}else
+		return false;
+}
+function isEmail(val)
+{
+	if(!checkEmpty(val,"Email"))
+	{
+		var at = val.indexOf("@");
+		var dot = val.indexOf(".");
+		if(at<1 || dot+2>=val.length || at+2>dot)
+		{
+			alert("Enter a valid email address");
+			return false;
+		}else
+			return true;
+	}else
+		return false;
+}
+function isNic(cnic_no)
+{
+	//var temp = /^[0-9+]{9}[vV]{1}$/;
+	//if(!checkEmpty(val,"Nic"))
+	//{
+		//if(val.match(temp))
+		//{
+			//if(val.length==10)
+				//return true;
+			//else
+		//	{
+			//	alert("Nic should consist of 10 digits !");
+				//return false;
+			//}
+		//}else
+		//{
+			//alert("Nic should only consist of Numeric characters + V sign!");
+			//return false;
+		//}
+	//}else
+		//return false;-->
+cnic_no_regex = /^[0-9]{9}[v|V]{1}$/;
+
+if(cnic_no_regex.test(cnic_no)) 
+{
+    alert('Right');
+}
+else 
+{
+    alert('Wrong');
+}
+}
+
+</script>
+
+
+    <!-- //Meta-Tags -->
+    <!-- Index-Page-CSS -->
+    <link rel="stylesheet" href="css/style1.css" type="text/css" media="all">
+    <!-- onlinefonts -->
+    <link href="//fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800" rel="stylesheet">
+    <!-- //Custom-Stylesheet-Links -->
+</head>
+
+<body>
+    <header>
+        <h1 class="title-agile text-center">Student Sign Up Form</h1>
+    </header>
+    <!-- //header -->
+	
+    <section class="login-wrap">
+        <div class="main_w3agile">
+		
+			
+            <input id="tab-2" type="radio" name="tab" class="sign-up" checked>
+            <label for="tab-2" class="tab">Student Sign Up</label>
+            <div class="login-form">
+                
+                <!-- signup form -->
+						<div class="signup_wthree">
+						<form onsubmit="return validate()" name="myForm1" method="post" action="StudentSignup.php" >
+						</br>
+						
+						
+						<table>					
+						<hr> Personal Information </hr>
+						</br>
+						<div class="group">
+							<tr>
+                            <td><label for="user1" class="label">First Name</label></td>
+							<td><input name="myForm1" id="fname" type="text"  required></td>
+						   </tr>
+						   
+                        </div>
+						
+                        <div class="group">
+                            <tr>
+							<td><label for="user1" class="label">Last Name</label></td>
+                            <td><input  name="myForm1" id="lname" type="text"  required></td>
+							</tr>
+						</div>
+						<div class="group">
+                            <tr>
+							<td><label for="user1" class="label">NIC/Passport No</label></td>
+                            <td><input name="myForm1" id="nic" type="text"  required></td>
+							</tr>
+						</div>
+						<div class="group">
+							<tr>
+                            <td><label for="user1" class="label">company Name</label></td>
+							<td><input name="myForm1" id="company_name" type="text"  required></td>
+						   </tr>
+						   
+                        </div>
+						</br>
+						</table>
+						
+						<table>
+						<hr> Account Information </hr>
+						</br>
+						
+						<div class="group">
+                            <tr>
+							<td><label for="email" class="label">Email Address</label></td>
+                            <td><input name="myForm1" id="email" type="email" class="input" required></td>
+							</tr>
+                        </div>
+						
+						<div class="group">
+							<tr>
+                            <td><label for="password1" class="label">Password</label></td>
+                            <td><input name="myForm1" id="password1" type="password" class="input" data-type="password" required></td>
+                        </tr>
+						</div>
+						
+                        <div class="group">
+						<tr>
+                            <td><label for="password2" class="label">Re-Enter Password</label></td>
+                            <td><input name="myForm1" id="password2" type="password" class="input" data-type="password" required></td>
+							</tr>
+                        </div>
+						</br>
+						</table>
+						
+						
+						<table>
+						<hr> Contact Information </hr>
+						</br>
+						
+						<div class="group">
+						<tr>
+                            <td><label for="user1" class="label">Address</label></td>
+                            <td><input name="myForm1" id="Address" type="textarea" class="input" required></td>
+							</tr>
+                        </div>
+					
+						<div class="group">
+						<tr>
+                            <td><label for="user1" class="label">Mobile No</label></td>
+                            <td><input name="myForm1" id="Mobile" type="text" class="input" required></td>
+							</tr>
+                        </div>
+						</table>
+						</br>
+						
+                         <div class="group">
+                            <input type="submit" class="button" value="Sign Up">
+                        </div>
+						<!--<div class="hr"></div>
+                        <div class="foot-lnk">
+                            <label for="tab-1">Already Member? </label>
+                        </div>
+						-->
+                    </form>
+                </div>
+                <!-- //signup form -->
+            </div>
+        </div>
+    </section>
+    <!-- //section -->
+    <footer>
+        <div class="copy-wthree text-center">
+            <p>© 2018 All rights reserved
+            </p>
+        </div>
+    </footer>
+    <!-- //footer -->
+    <!-- script for password match -->
+    <script>
+        window.onload = function () {
+            document.getElementById("password1").onchange = validatePassword;
+            document.getElementById("password2").onchange = validatePassword;
+        }
+		
+        function validatePassword() {
+            var pass2 = document.getElementById("password2").value;
+            var pass1 = document.getElementById("password1").value;
+            if (pass1 != pass2)
+                document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+            else
+                document.getElementById("password2").setCustomValidity('');
+            //empty string means no validation error
+        }
+    </script>
+    <!-- script for password match -->
+</body>
+<!-- //Body -->
+
+</html>

@@ -124,7 +124,7 @@ else
 
 <body>
     <header>
-        <h1 class="title-agile text-center">Sign Up Form</h1>
+        <h1 class="title-agile text-center">ITM Sign Up Form</h1>
     </header>
     <!-- //header -->
 	
@@ -133,59 +133,46 @@ else
 		
 			
             <input id="tab-2" type="radio" name="tab" class="sign-up" checked>
-            <label for="tab-2" class="tab">Sign Up</label>
+            <label for="tab-2" class="tab">ITM Sign Up</label>
             <div class="login-form">
                 
                 <!-- signup form -->
-						<div class="signup_wthree">
-						<form onsubmit="return validate()" name="myForm1" method="post" action="Signup.php" >
-						</br>
-						
-						
-						<table>					
-						<hr> Personal Information </hr>
-						</br>
+				<div class="signup_wthree">
+						<form onsubmit="return validate()" name="myForm1" method="post" action="ITMSignup.php" >
+						<table>	
 						<div class="group">
 							<tr>
-                            <td><label for="user1" class="label">First Name</label></td>
-							<td><input name="myForm1" id="fname" type="text"  required></td>
+                            <td><label for="user1" class="label">ITM ID</label></td>
 						   </tr>
 						   
                         </div>
 						
+						<div class="group">
+							<tr>
+                            <td><label for="user1" class="label">ITM name</label></td>
+							<td><input name="myForm1" id="ITM_name" type="text"  required></td>
+						   </tr>
+						   
+                        </div>
                         <div class="group">
                             <tr>
-							<td><label for="user1" class="label">Last Name</label></td>
-                            <td><input  name="myForm1" id="lname" type="text"  required></td>
+							<td><label for="user1" class="label">Mobile number</label></td>
+                            <td><input  name="myForm1" id="mobile" type="text"  required></td>
 							</tr>
 						</div>
 						<div class="group">
                             <tr>
-							<td><label for="user1" class="label">NIC/Passport No</label></td>
-                            <td><input name="myForm1" id="nic" type="text"  required></td>
+							<td><label for="user1" class="label">email</label></td>
+                            <td><input name="myForm1" id="email" type="email"  required></td>
 							</tr>
 						</div>
 						</br>
-						</table>
-						
-						<table>
-						<hr> Account Information </hr>
-						</br>
-						
-						<div class="group">
-                            <tr>
-							<td><label for="email" class="label">Email Address</label></td>
-                            <td><input name="myForm1" id="email" type="email" class="input" required></td>
-							</tr>
-                        </div>
-						
 						<div class="group">
 							<tr>
                             <td><label for="password1" class="label">Password</label></td>
                             <td><input name="myForm1" id="password1" type="password" class="input" data-type="password" required></td>
                         </tr>
 						</div>
-						
                         <div class="group">
 						<tr>
                             <td><label for="password2" class="label">Re-Enter Password</label></td>
@@ -194,36 +181,10 @@ else
                         </div>
 						</br>
 						</table>
-						
-						
-						<table>
-						<hr> Contact Information </hr>
-						</br>
-						
-						<div class="group">
-						<tr>
-                            <td><label for="user1" class="label">Address</label></td>
-                            <td><input name="myForm1" id="Address" type="textarea" class="input" required></td>
-							</tr>
-                        </div>
-					
-						<div class="group">
-						<tr>
-                            <td><label for="user1" class="label">Mobile No</label></td>
-                            <td><input name="myForm1" id="Mobile" type="text" class="input" required></td>
-							</tr>
-                        </div>
-						</table>
-						</br>
-						
+							</br>
                          <div class="group">
                             <input type="submit" class="button" value="Sign Up">
                         </div>
-						<!--<div class="hr"></div>
-                        <div class="foot-lnk">
-                            <label for="tab-1">Already Member? </label>
-                        </div>
-						-->
                     </form>
                 </div>
                 <!-- //signup form -->
@@ -233,8 +194,7 @@ else
     <!-- //section -->
     <footer>
         <div class="copy-wthree text-center">
-            <p>© 2018 All rights reserved
-            </p>
+            <p> © 2018 All rights reserved </p>
         </div>
     </footer>
     <!-- //footer -->
