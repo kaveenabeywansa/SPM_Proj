@@ -1,7 +1,7 @@
 <?php
     session_start();
 	include('dbconnect_v.php');
-	if(!isset($_SESSION['username'])){	
+	if(isset($_SESSION['username'])){	
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -85,19 +85,19 @@
                             </tr>
                         </thead>
                         <tbody>
-                            
-                            <?php
+                        <?php
                                 $query="select * from student_forms where FormI_6 <> 'null'";
 								$result=mysqli_query($con,$query);
 								$i=1;
                                 while($row=mysqli_fetch_array($result)){
+									
                                     echo '<tr>
-										<form method="post" action="dbAction.php" onSubmit="validation()">
+										<form method="post" action="dbAction.php">
 											<th scope="row">'.($i++).'</th>
 											<td>'.$row['It_number'].'</td>
 											<input name="name" value="'.$row['It_number'].'" style="display:none;">
 											<td><input name="date" id="date" type="date" class="input" required></td>
-											<td><input name="time" id="time" type="text" class="input" style="width:100px;" required></td>
+											<td><input name="time" id="time" min="9:00" max="18:00" type="time" class="input" style="width:100px;" required></td>
 											<td><input name="venue" id="venue" type="text" class="input" style="width:100px;" required></td>
 											<td><input type="submit" class="button" name="schedule" value="Schedule"></td>
 										</form>

@@ -62,7 +62,6 @@
                 $size6 = intval($_FILES['doc6']['size']);
                 if(!mysqli_query($con,"update student_forms set FormI_6='".$file6."' where It_number='".$_SESSION['username']."'")){
                     echo 'alert("Error in submitting")';
-                    console.log("err5");
                 }
                 header("Location: http://localhost/SPM_Proj/forms_v.php"); /* Redirect browser */
                 exit();
