@@ -9,7 +9,7 @@
 ?>
 <html lang="en">
 <head>
-	<title>Form Submission</title>
+	<title>Attest Form I-1</title>
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8" />
@@ -105,9 +105,10 @@
                     $count++;
                     echo '<tr>
                         <td>'.$row["It_number"].'</td>
-                        <td>'.$row["First Name"]." ".$row["Last Name"].'</td>
-                        <td><center>
-                                <img src="images/downloadicon.png" alt="Download Form" height="50" width="50">
+                        <td>'.$row["First_Name"]." ".$row["Last_Name"].'</td>
+                        <td>
+                            <center>
+                                <a href="supervisorformi1download.php?itnum='.$row["It_number"].'" ><img src="images/downloadicon.png" alt="Download Form" height="50" width="50"></as>
                             </center>
                         </td>
                         <td><div class="uploaddiv">
@@ -144,7 +145,7 @@
 // verfication
                 }
             }else{
-                echo 'No results !';
+                echo 'No any pending submissions !';
             }
             ?>
         </table>

@@ -1,7 +1,15 @@
 <!DOCTYPE html>
+<?php
+    require 'dbconnectionsup.php';
+    // check if user has logged in using sessions
+
+    //get data related to the supervisor
+    $comp = "Abc"; // get current supervisors company from sessions
+    $results=$conn->query("select * from student where Company='Abc' and verfication=1"); // also check for pending submissions
+?>
 <html lang="en">
 <head>
-	<title>Form Submission</title>
+	<title>Attest Form I-3</title>
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8" />
@@ -24,7 +32,19 @@
 	<link href="//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
 	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
     <!-- //Web-Fonts -->
-    
+
+    <!-- Check if returning from upload page and show message -->
+    <?php
+        if(isset($_GET['ustatus'])){
+            if($_GET['ustatus']==='true'){
+                echo '<script>alert("Successfully uploaded !");</script>';
+            }else if($_GET['type']==='file'){
+                echo '<script>alert("Error occured while uploading to server ! Please re-try !");</script>';
+            }else if($_GET['type']==='db'){
+                echo '<script>alert("Error occured while saving information to database ! Please re-try !");</script>';
+            }
+        }
+    ?>
 </head>
 
 <body class="container-fluid">
@@ -48,16 +68,13 @@
 					</li>
 					<li class="nav-item mr-lg-2 mb-lg-0 mb-2 active">
 						<a class="nav-link" href="supdowni3form">Attest I-3 Forms
-                            <span class="sr-only">(current)</span>
-                        </a>
+                        <span class="sr-only">(current)</span></a>
 					</li>
                     <li class="nav-item mr-lg-2 mb-lg-0 mb-2">
 						<a class="nav-link" href="supdowni5form">Feedback Form I-5</a>
 					</li>
-					<!-- <li class="nav-item mr-lg-2 mb-lg-0 mb-2">
-						<a class="nav-link" href="formI-3.php">I-3 form</a>
-					</li>
-					<li class="nav-item mr-lg-2 mb-lg-0 mb-2">
+					 
+					<!--<li class="nav-item mr-lg-2 mb-lg-0 mb-2">
 						<a class="nav-link" href="formI-6.php">I-6 form</a>
 					</li> -->
 					<li class="nav-item">
@@ -65,76 +82,78 @@
 					</li>
 				</ul>
 			</div>
-		</nav>
-		<div class="supform">
+        </nav>
+        <div class="suphead">
         <center>
             <h1>Download & Re-Upload I-3 Forms</h1>
         </center>
-        <table>
+        </div>
+		<div class="supform">
+        <table class="dsptab">
             <tr>
                 <th width="20%">Reg. No.</th>
                 <th width="50%">Name</th>
                 <th width="15%">Download</th>
                 <th width="15%">Upload</th>
             </tr>
-            <tr>
-                <td>01</td>
-                <td>Bruce Wayne</td>
-                <td>
-                    <center>
-                        <img src="images/downloadicon.png" alt="Download Form" height="50" width="50">
-                    </center>
-                </td>
-                <td>
-                    <center>
-                        <img src="images/uploadicon.png" alt="Upload Edited Form" height="50" width="50">
-                    </center>
-                </td>
-            </tr>
-            <tr>
-                <td>02</td>
-                <td>Kent Clark</td>
-                <td>
-                    <center>
-                        <img src="images/downloadicon.png" alt="Download Form" height="50" width="50">
-                    </center>
-                </td>
-                <td>
-                    <center>
-                        <img src="images/uploadicon.png" alt="Upload Edited Form" height="50" width="50">
-                    </center>
-                </td>
-            </tr>
-            <tr>
-                <td>03</td>
-                <td>Tony Stark</td>
-                <td>
-                    <center>
-                        <img src="images/downloadicon.png" alt="Download Form" height="50" width="50">
-                    </center>
-                </td>
-                <td>
-                    <center>
-                        <img src="images/uploadicon.png" alt="Upload Edited Form" height="50" width="50">
-                    </center>
-                </td>
-            </tr>
-            <tr>
-                <td>04</td>
-                <td>Peter Parker</td>
-                <td>
-                    <center>
-                        <img src="images/downloadicon.png" alt="Download Form" height="50" width="50">
-                    </center>
-                </td>
-                <td>
-                    <center>
-                        <img src="images/uploadicon.png" alt="Upload Edited Form" height="50" width="50">
-                    </center>
-                </td>
-            </tr>
+            <?php
+            //
+            $count=0;
+            if($results->num_rows>0){
+                while($row=$results->fetch_assoc()){ //$row['fname']
+                    $count++;
+                    echo '<tr>
+                        <td>'.$row["It_number"].'</td>
+                        <td>'.$row["First_Name"]." ".$row["Last_Name"].'</td>
+                        <td>
+                            <center>
+                                <a href="supervisorformi3download.php?itnum='.$row["It_number"].'" ><img src="images/downloadicon.png" alt="Download Form" height="50" width="50"></as>
+                            </center>
+                        </td>
+                        <td><div class="uploaddiv">
+                            <form action="supi3formupload.php" method="post" enctype="multipart/form-data"">
+                                <input type="hidden" name="stdid" id="stdid" value="'.$row["It_number"].'">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <input type="file" name="fileToUpload" id="fileToUpload" onchange="clicked(this,'.$count.')">
+                                        </td>
+                                    </tr>
+                                    <tr><td></td></tr>
+                                    <tr>
+                                        <td>
+                                            <input type="submit" value="Upload Form I-3" name="submit" id="formuploadbtn'.$count.'">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                            </div>
+                        </td>
+                    </tr>';
+                }
+            }else{
+                echo 'No any pending submissions !';
+            }
+            ?>
         </table>
         </div>
-
+<script>
+    //hide all upload buttons at first
+    var y = <?php echo $results->num_rows?>;
+    for(var i=1;i<=2;i++){
+        document.getElementById('formuploadbtn'+i).style.display = 'none';
+    }
+    function clicked(sel,count){
+        //alert(sel.value);
+        if(sel.value==null ||sel.value==""){
+            //null
+            document.getElementById('formuploadbtn'+count).style.display = 'none';
+        }
+        else{
+            //not null
+            document.getElementById('formuploadbtn'+count).style.display = 'inline';
+        }
+    }
+</script>
 </body>
 </html>

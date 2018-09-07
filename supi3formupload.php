@@ -1,7 +1,7 @@
 <?php
 require 'dbconnectionsup.php';
 
-$target_dir = "uploads/i1/";
+$target_dir = "uploads/i3/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -39,16 +39,17 @@ if ($uploadOk == 0) {
 } else {
     $ext = end((explode(".", $_FILES["fileToUpload"]["name"])));
     $target_file2 = $target_dir . $_POST['stdid'] .'_'. date('d_m_Y_H_i_s') . '.'. $ext;
-    $qry="insert into supervisor_forms(Username,Student_id,Date,FormI_1) values('admin','".$_POST['stdid']."','".date('Y-m-d')."','$target_file2')";
+    //change this query to an update
+    $qry="insert into supervisor_forms(Username,Student_id,Date,FormI_3) values('admin','".$_POST['stdid']."','".date('Y-m-d')."','$target_file2')";
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file2)) {
         if($conn->query($qry)){
-            header('Location: '.'supdowni1form?ustatus=true');
+            header('Location: '.'supdowni3form?ustatus=true');
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
             //header('Location: '.'supdowni1form?ustatus=false&type=db');
         }
     } else {
-        header('Location: '.'supdowni1form?ustatus=false&type=file');
+        header('Location: '.'supdowni3form?ustatus=false&type=file');
     }
     
 }
