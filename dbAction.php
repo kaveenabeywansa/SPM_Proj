@@ -1,7 +1,7 @@
 <?php
     session_start();
     include('dbconnect_v.php');
-    $_SESSION['username']="IT16055186";
+    $_SESSION['username']="IT11";
 
 //FormI-1
 	if(isset($_POST['submit1'])){
@@ -37,8 +37,7 @@
                     exit();
                 }
                 else{
-                    echo 'alert("Error in submitting)';
-                    header("Location: http://localhost/SPM_Proj/forms_v.php");
+                    die("error");
                 }
             }else{
                 echo 'alert("Error in submitting)';
@@ -61,7 +60,7 @@
                 $file6 = $con->real_escape_string(file_get_contents($_FILES['doc6']['tmp_name']));
                 $size6 = intval($_FILES['doc6']['size']);
                 if(!mysqli_query($con,"update student_forms set FormI_6='".$file6."' where It_number='".$_SESSION['username']."'")){
-                    echo 'alert("Error in submitting")';
+                    die("error");
                 }
                 header("Location: http://localhost/SPM_Proj/forms_v.php"); /* Redirect browser */
                 exit();
@@ -83,7 +82,7 @@
             $venue=$_POST['venue'];
             //Check whether fields are empty
             if($name == '' && $date == '' && $time == '' && $venue == ''){
-
+                die("error");
             }
             else{
                 if(mysqli_query($con,"insert into viva(It_number,Date,Time,Venue) values('".$name."','".$date."','".$time."','".$venue."')")){
