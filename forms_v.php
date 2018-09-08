@@ -1,6 +1,7 @@
 <?php
 	session_start();
-	if(isset($_SESSION['username'])){
+	//Looking for autherized user
+	if(isset($_SESSION['username'])){	
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +48,7 @@
 						<a class="nav-link" href="#profile">Profile</a>
 					</li>
 					<li class="nav-item mr-lg-2 mb-lg-0 mb-2">
-						<a class="nav-link" href="companyReg.php">Company</a>
+						<a class="nav-link" href="schedule.php">Viva Schedule</a>
 					</li>
 					<li class="nav-item mr-lg-2 mb-lg-0 mb-2 active">
 						<a class="nav-link" href="forms.html">Form Submission
@@ -110,6 +111,7 @@
 <?php
 	}
 	else{
-		echo 'Direct access to this site is not allowed';
+		//
+		header("location:/SPM_Proj/index.html");
 	}
 ?>

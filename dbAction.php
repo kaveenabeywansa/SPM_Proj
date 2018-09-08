@@ -1,22 +1,18 @@
 <?php
     session_start();
+    //Database file
     include('dbconnect_v.php');
-    $_SESSION['username']="IT11";
 
-//FormI-1
+//FormI-1 submission
 	if(isset($_POST['submit1'])){
         if($con->real_escape_string(file_get_contents($_FILES['doc1']['tmp_name']))!=null){
             if(isset($_SESSION['username'])){
                 $name1 = $con->real_escape_string($_FILES['doc1']['name']);
                 $file1 = $con->real_escape_string(file_get_contents($_FILES['doc1']['tmp_name']));
-                $res=mysqli_query($con,"select * from student_forms where It_number='".$_SESSION['username']."' and FormI_1='".$file1."'");
-                if($res==null){
-                    if(!mysqli_query($con,"insert into student_forms (It_number,FormI_1) values ('".$_SESSION['username']."','".$file1."')")){
-                        die("error");
-                    }
-                }
-                else{
-                    die("Cannot Submit because you already submitted that.");
+                $content = $con->real_escape_string($_FILES['doc1']['type']);
+                if(mysqli_query($con,"insert into student_forms (Email_student,FormI_1,FormI_1_Up) values ('".$_SESSION['username']."','".$file1."','".$content."')")){
+                    header("Location: http://localhost/SPM_Proj/forms_v.php"); /* Redirect browser */
+                    exit();
                 }
             }
             else{
@@ -32,13 +28,14 @@
 
     }
 
-//FormI-3
+//FormI-3 submission
 	if(isset($_POST['submit3'])){
         if($con->real_escape_string(file_get_contents($_FILES  ['doc3']['tmp_name']))!=null){
             if(isset($_SESSION['username'])){
                 $name1 = $con->real_escape_string($_FILES['doc3']['name']);
                 $file3 = $con->real_escape_string(file_get_contents($_FILES['doc3']['tmp_name']));
-                if(mysqli_query($con,"insert into student_forms (It_number,FormI_3) values ('".$_SESSION['username']."','".$file3."')")){
+                $content = $con->real_escape_string($_FILES['doc3']['type']);
+                if(mysqli_query($con,"insert into student_forms (Email_student,FormI_3,FormI_3_Up) values ('".$_SESSION['username']."','".$file3."','".$content."')")){
                     header("Location: http://localhost/SPM_Proj/forms_v.php"); /* Redirect browser */
                     exit();
                 }
@@ -57,7 +54,7 @@
 		
     }
 
-//FormI-6
+//FormI-6 Submission
 	if(isset($_POST['submit6'])){
         if($con->real_escape_string(file_get_contents($_FILES  ['doc6']['tmp_name']))!=null){
             if(isset($_SESSION['username'])){
@@ -65,7 +62,7 @@
                 $mime6 = $con->real_escape_string($_FILES['doc6']['type']);
                 $file6 = $con->real_escape_string(file_get_contents($_FILES['doc6']['tmp_name']));
                 $size6 = intval($_FILES['doc6']['size']);
-                if(!mysqli_query($con,"update student_forms set FormI_6='".$file6."' where It_number='".$_SESSION['username']."'")){
+                if(!mysqli_query($con,"update student_forms set FormI_7='".$file6."',FormI_6_Up='".$mime6."' where Email_student='".$_SESSION['username']."'")){
                     die("error");
                 }
                 header("Location: http://localhost/SPM_Proj/forms_v.php"); /* Redirect browser */
@@ -91,7 +88,7 @@
                 die("error");
             }
             else{
-                if(mysqli_query($con,"insert into viva(It_number,Date,Time,Venue) values('".$name."','".$date."','".$time."','".$venue."')")){
+                if(mysqli_query($con,"insert into viva(Email_student,Date,Time,Venue) values('".$name."','".$date."','".$time."','".$venue."')")){
                     echo "<script type='text/javascript'>alert('hi');</script>";
                 }
                 header("Location: http://localhost/SPM_Proj/viva_schedule_v.php"); /* Redirect browser */
