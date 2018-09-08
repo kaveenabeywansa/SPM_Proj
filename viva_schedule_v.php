@@ -48,10 +48,10 @@
 						<a class="nav-link" href="#profile">Profile</a>
 					</li>
 					<li class="nav-item mr-lg-2 mb-lg-0 mb-2">
-						<a class="nav-link" href="companyReg.php">Company</a>
+						<a class="nav-link" href="#">Form Submission</a>
 					</li>
 					<li class="nav-item mr-lg-2 mb-lg-0 mb-2 active">
-						<a class="nav-link" href="forms.html">Form Submission
+						<a class="nav-link" href="viva_schedule_v.php">Viva Schedule
                             <span class="sr-only">(current)</span>
                         </a>
 					</li>
@@ -86,16 +86,15 @@
                         </thead>
                         <tbody>
                         <?php
-                                $query="select * from student_forms where FormI_6 <> 'null'";
+                                $query="select s.First_Name as FN,s.Email_student as ES from student_forms st,student s where st.Email_student=s.Email_student and st.FormI_7 <> 'null'";
 								$result=mysqli_query($con,$query);
 								$i=1;
                                 while($row=mysqli_fetch_array($result)){
-									
-                                    echo '<tr>
+									echo '<tr>
 										<form method="post" action="dbAction.php">
 											<th scope="row">'.($i++).'</th>
-											<td>'.$row['It_number'].'</td>
-											<input name="name" value="'.$row['It_number'].'" style="display:none;">
+											<td>'.$row['FN'].'</td>
+											<input name="name" value="'.$row['ES'].'" style="display:none;">
 											<td><input name="date" id="date" type="date" class="input" required></td>
 											<td><input name="time" id="time" min="9:00" max="18:00" type="time" class="input" style="width:100px;" required></td>
 											<td><input name="venue" id="venue" type="text" class="input" style="width:100px;" required></td>
@@ -116,6 +115,6 @@
 <?php
 	}
 	else{
-		echo 'Direct access to this site is not allowed';
+		header("location:/SPM_Proj/index.html");
 	}
 ?>

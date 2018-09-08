@@ -1,7 +1,7 @@
 <?php
     session_start();
 	include('dbconnect_v.php');
-	if(!isset($_SESSION['username'])){	
+	if(isset($_SESSION['username'])){	
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,10 +48,10 @@
 						<a class="nav-link" href="#profile">Profile</a>
 					</li>
 					<li class="nav-item mr-lg-2 mb-lg-0 mb-2">
-						<a class="nav-link" href="companyReg.php">Company</a>
+						<a class="nav-link" href="forms_v.php">Form Submission</a>
 					</li>
 					<li class="nav-item mr-lg-2 mb-lg-0 mb-2 active">
-						<a class="nav-link" href="forms.html">Form Submission
+						<a class="nav-link" href="schedule.php">Viva Schedule
                             <span class="sr-only">(current)</span>
                         </a>
 					</li>
@@ -78,7 +78,7 @@
                         <thead>
                             <tr>
 								<th scope="col">#</th>
-                                <th scope="col">Username</th>
+                                <th scope="col">Name</th>
                                 <th scope="col">Date</th>
                                 <th scope="col">Time</th>
                                 <th scope="col">Venue</th>
@@ -86,14 +86,14 @@
                         </thead>
                         <tbody>
                             <?php
-                                $query="select * from viva";
+                                $query="select v.Email_student as ES,v.Date as Date,v.Time as Time,v.Venue as Venue from viva v,student s where v.Email_student=s.Email_student"; 
 								$result=mysqli_query($con,$query);
 								$i=1;
                                 while($row=mysqli_fetch_array($result)){
                                    echo '<tr>
 										<form method="post" action="dbAction.php">
 											<th scope="row">'.($i++).'</th>
-											<td>'.$row['It_number'].'</td>
+											<td>'.$row['ES'].'</td>
 											<td>'.$row['Date'].'</td>
 											<td>'.$row['Time'].'</td>
 											<td>'.$row['Venue'].'</td>
@@ -113,6 +113,6 @@
 <?php
 	}
 	else{
-		echo 'Direct access to this site is not allowed';
+		header("Location: http://localhost/SPM_Proj/index.html");
 	}
 ?>
