@@ -4,8 +4,8 @@
     // check if user has logged in using sessions
 
     //get data related to the supervisor
-    $comp = "Abc"; // get current supervisors company from sessions
-    $results=$conn->query("select * from student where Company='Abc' and verfication=1");
+    $comp = "Shit hole"; // get current supervisors company from sessions
+    $results=$conn->query("select * from student where Company='$comp' and verfication=1");
 ?>
 <html lang="en">
 <head>
@@ -92,7 +92,7 @@
 		<div class="supform">
         <table class="dsptab">
             <tr>
-                <th width="20%">Reg. No.</th>
+                <th width="20%">NIC</th>
                 <th width="50%">Name</th>
                 <th width="15%">Download</th>
                 <th width="15%">Upload</th>
@@ -104,16 +104,16 @@
                 while($row=$results->fetch_assoc()){ //$row['fname']
                     $count++;
                     echo '<tr>
-                        <td>'.$row["It_number"].'</td>
+                        <td>'.$row["NIC_Passport"].'</td>
                         <td>'.$row["First_Name"]." ".$row["Last_Name"].'</td>
                         <td>
                             <center>
-                                <a href="supervisorformi1download.php?itnum='.$row["It_number"].'" ><img src="images/downloadicon.png" alt="Download Form" height="50" width="50"></as>
+                                <a href="supervisorformi1download.php?email='.$row["Email_student"].'" ><img src="images/downloadicon.png" alt="Download Form" height="50" width="50"></as>
                             </center>
                         </td>
                         <td><div class="uploaddiv">
                             <form action="supi1formupload.php" method="post" enctype="multipart/form-data"">
-                                <input type="hidden" name="stdid" id="stdid" value="'.$row["It_number"].'">
+                                <input type="hidden" name="stdid" id="stdid" value="'.$row["Email_student"].'">
                                 <table>
                                     <tr>
                                         <td>
@@ -131,7 +131,7 @@
                             </div>
                         </td>
                     </tr>';
-// It_number
+// NIC_Passport
 // First Name
 // Last Name
 // NIC_Passport

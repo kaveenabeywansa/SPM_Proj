@@ -2,7 +2,7 @@
     $host="localhost";
     $user="root";
     $pass="";
-    $db="testing123";
+    $db="spm";
 
     $conn = new mysqli($host,$user,$pass,$db);
     if($conn->connect_error){

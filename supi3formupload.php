@@ -40,7 +40,7 @@ if ($uploadOk == 0) {
     $ext = end((explode(".", $_FILES["fileToUpload"]["name"])));
     $target_file2 = $target_dir . $_POST['stdid'] .'_'. date('d_m_Y_H_i_s') . '.'. $ext;
     //change this query to an update
-    $qry="insert into supervisor_forms(Username,Student_id,Date,FormI_3) values('admin','".$_POST['stdid']."','".date('Y-m-d')."','$target_file2')";
+    $qry="update supervisor_forms set FormI_3='".$target_file2."' where Email_student='".$_POST['stdid']."'";
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file2)) {
         if($conn->query($qry)){
             header('Location: '.'supdowni3form?ustatus=true');
