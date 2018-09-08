@@ -1,11 +1,12 @@
 <?php
-	session_start();
-	if(isset($_SESSION['username'])){
+    session_start();
+	include('dbconnect_v.php');
+	if(!isset($_SESSION['username'])){	
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Form Submission</title>
+	<title>View Schedule</title>
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8" />
@@ -55,7 +56,6 @@
                         </a>
 					</li>
 					<li class="nav-item">
-					<!-- To check whether the user has logged in or not -->
 					<?php
 							if(isset($_SESSION['username'])){
 								echo '<a class="nav-link" href="logout_v.php">Log Out</a>';
@@ -72,34 +72,37 @@
 			<div class="container py-xl-5 py-lg-5">
 			<section class="login-wrap">
 				<div class="main_w3agile">
-					<h1 style="font: 25px bold black;">Form I-1 Submission</h1>
+					<h1 style="font: 25px bold black;">Viva Schedule</h1>
 					<div class="login-form">
-						<!-- Forms to submit -->
-						<form method="post" action="dbAction.php" enctype="multipart/form-data">
-							<div class="group">
-								<input type="file" size="500" class="input" id="doc1" name="doc1">
-							</div>
-							<div class="group">
-								<input type="submit" class="button" value="Submit" name="submit1" onclick="return confirm('Are you sure?');">
-							</div>
-                            <div class="hr"></div>
-                            <h1 style="font: 25px bold black;">Form I-3 Submission</h1>
-                            <div class="group">
-								<input type="file" size="50" class="input" id="doc3" name="doc3">
-							</div>
-							<div class="group">
-								<input type="submit" class="button" value="Submit" name="submit3" onclick="return confirm('Are you sure?');">
-                            </div>
-                            <div class="hr"></div>
-                            <h1 style="font: 25px bold black;">Form I-6 Submission</h1>
-                            <div class="group">
-								<input type="file" size="50" class="input" id="doc6" name="doc6">
-							</div>
-							<div class="group">
-								<input type="submit" class="button" value="Submit" name="submit6" onclick="return confirm('Are you sure?');">
-							</div>
-						</form>
-						<!-- /Form to submit -->
+                    <table class="table">
+                        <thead>
+                            <tr>
+								<th scope="col">#</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Time</th>
+                                <th scope="col">Venue</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                $query="select * from viva";
+								$result=mysqli_query($con,$query);
+								$i=1;
+                                while($row=mysqli_fetch_array($result)){
+                                   echo '<tr>
+										<form method="post" action="dbAction.php">
+											<th scope="row">'.($i++).'</th>
+											<td>'.$row['It_number'].'</td>
+											<td>'.$row['Date'].'</td>
+											<td>'.$row['Time'].'</td>
+											<td>'.$row['Venue'].'</td>
+										</form>
+                                    </tr>';
+                                }
+                            ?>
+                        </tbody>
+                    </table>
 					</div>
 				</div>
     		</section>

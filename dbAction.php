@@ -9,8 +9,14 @@
             if(isset($_SESSION['username'])){
                 $name1 = $con->real_escape_string($_FILES['doc1']['name']);
                 $file1 = $con->real_escape_string(file_get_contents($_FILES['doc1']['tmp_name']));
-                if(!mysqli_query($con,"insert into student_forms (It_number,FormI_1) values ('".$_SESSION['username']."','".$file1."')")){
-                    die("error");
+                $res=mysqli_query($con,"select * from student_forms where It_number='".$_SESSION['username']."' and FormI_1='".$file1."'");
+                if($res==null){
+                    if(!mysqli_query($con,"insert into student_forms (It_number,FormI_1) values ('".$_SESSION['username']."','".$file1."')")){
+                        die("error");
+                    }
+                }
+                else{
+                    die("Cannot Submit because you already submitted that.");
                 }
             }
             else{
@@ -40,7 +46,7 @@
                     die("error");
                 }
             }else{
-                echo 'alert("Error in submitting)';
+                header("Location: http://localhost/SPM_Proj/logout.php");
             }
         }
         else{
