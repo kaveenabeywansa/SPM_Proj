@@ -140,43 +140,51 @@ else
 				<div class="signup_wthree">
 						<form onsubmit="return validate()" name="myForm1" method="post" action="SupervisorSignup.php" >
 						<table>	
-						<div class="group">
-							<tr>
-                            <td><label for="user1" class="label">Supervisor ID</label></td>
-						   </tr>
-						   
-                        </div>
 						
 						<div class="group">
 							<tr>
                             <td><label for="user1" class="label">Company name</label></td>
-							<td><input name="myForm1" id="company_name" type="text"  required></td>
+							<td><input name="company_name" id="company_name" type="text"  required></td>
 						   </tr>
 						   
                         </div>
                         <div class="group">
                             <tr>
 							<td><label for="user1" class="label">Mobile number</label></td>
-                            <td><input  name="myForm1" id="mobile" type="text"  required></td>
+                            <td><input  name="mobile" id="mobile" type="text"  required></td>
 							</tr>
 						</div>
+						
+						<div class="group">
+						<tr>
+                            <td><label for="password2" class="label">Security Question</label></td>
+                            <td><input name="security_question" id="security_question" type="text" class="input" data-type="password" required></td>
+							</tr>
+                        </div>
+						<div class="group">
+						<tr>
+                            <td><label for="password2" class="label">Answer</label></td>
+                            <td><input name="security_answer" id="security_answer" type="text" class="input" data-type="password" required></td>
+							</tr>
+                        </div>
+						
 						<div class="group">
                             <tr>
 							<td><label for="user1" class="label">email</label></td>
-                            <td><input name="myForm1" id="email" type="email"  required></td>
+                            <td><input name="email" id="email" type="email"  required></td>
 							</tr>
 						</div>
 						</br>
 						<div class="group">
 							<tr>
                             <td><label for="password1" class="label">Password</label></td>
-                            <td><input name="myForm1" id="password1" type="password" class="input" data-type="password" required></td>
+                            <td><input name="password1" id="password1" type="password" class="input" data-type="password" required></td>
                         </tr>
 						</div>
                         <div class="group">
 						<tr>
                             <td><label for="password2" class="label">Re-Enter Password</label></td>
-                            <td><input name="myForm1" id="password2" type="password" class="input" data-type="password" required></td>
+                            <td><input name="password2" id="password2" type="password" class="input" data-type="password" required></td>
 							</tr>
                         </div>
 						</br>

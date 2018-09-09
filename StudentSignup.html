@@ -111,6 +111,7 @@ else
 }
 }
 
+
 </script>
 
 
@@ -138,7 +139,7 @@ else
                 
                 <!-- signup form -->
 						<div class="signup_wthree">
-						<form onsubmit="return validate()" name="myForm1" method="post" action="StudentSignup.php" >
+						<form onsubmit="return validate()" name="myForm1" method="post" action="StudentSignup.php? Type=student" >
 						</br>
 						
 						
@@ -148,7 +149,7 @@ else
 						<div class="group">
 							<tr>
                             <td><label for="user1" class="label">First Name</label></td>
-							<td><input name="myForm1" id="fname" type="text"  required></td>
+							<td><input name="fname" id="fname" type="text"  required></td>
 						   </tr>
 						   
                         </div>
@@ -156,19 +157,19 @@ else
                         <div class="group">
                             <tr>
 							<td><label for="user1" class="label">Last Name</label></td>
-                            <td><input  name="myForm1" id="lname" type="text"  required></td>
+                            <td><input  name="lname" id="lname" type="text"  required></td>
 							</tr>
 						</div>
 						<div class="group">
                             <tr>
 							<td><label for="user1" class="label">NIC/Passport No</label></td>
-                            <td><input name="myForm1" id="nic" type="text"  required></td>
+                            <td><input name="nic" id="nic" type="text"  required></td>
 							</tr>
 						</div>
 						<div class="group">
 							<tr>
                             <td><label for="user1" class="label">company Name</label></td>
-							<td><input name="myForm1" id="company_name" type="text"  required></td>
+							<td><input name="company_name" id="company_name" type="text"  required></td>
 						   </tr>
 						   
                         </div>
@@ -182,24 +183,42 @@ else
 						<div class="group">
                             <tr>
 							<td><label for="email" class="label">Email Address</label></td>
-                            <td><input name="myForm1" id="email" type="email" class="input" required></td>
+                            <td><input name="email" id="email" type="email" class="input" required></td>
 							</tr>
                         </div>
 						
 						<div class="group">
 							<tr>
                             <td><label for="password1" class="label">Password</label></td>
-                            <td><input name="myForm1" id="password1" type="password" class="input" data-type="password" required></td>
+                            <td><input name="password1" id="password1" type="password" class="input" data-type="password" required></td>
                         </tr>
 						</div>
 						
                         <div class="group">
 						<tr>
                             <td><label for="password2" class="label">Re-Enter Password</label></td>
-                            <td><input name="myForm1" id="password2" type="password" class="input" data-type="password" required></td>
+                            <td><input name="password2" id="password2" type="password" class="input" data-type="password" required></td>
 							</tr>
                         </div>
 						</br>
+						</table>
+						
+						<table>
+						<hr> Security Information </hr>
+						</br>
+		
+						<div class="group">
+						<tr>
+                            <td><label for="password2" class="label">Security Question</label></td>
+                            <td><input name="security_question" id="security_question" type="text" class="input" data-type="password" required></td>
+							</tr>
+                        </div>
+						<div class="group">
+						<tr>
+                            <td><label for="password2" class="label">Answer</label></td>
+                            <td><input name="security_answer" id="security_answer" type="text" class="input" data-type="password" required></td>
+							</tr>
+                        </div>
 						</table>
 						
 						
@@ -210,14 +229,14 @@ else
 						<div class="group">
 						<tr>
                             <td><label for="user1" class="label">Address</label></td>
-                            <td><input name="myForm1" id="Address" type="textarea" class="input" required></td>
+                            <td><input name="address" id="address" type="textarea" class="input" required></td>
 							</tr>
                         </div>
 					
 						<div class="group">
 						<tr>
                             <td><label for="user1" class="label">Mobile No</label></td>
-                            <td><input name="myForm1" id="Mobile" type="text" class="input" required></td>
+                            <td><input name="mobile" pattern="[0-9]{9}" id="mobile" type="text" class="input" required></td>
 							</tr>
                         </div>
 						</table>

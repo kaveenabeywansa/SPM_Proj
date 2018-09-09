@@ -2,30 +2,44 @@
 // Establishing Connection with Server by passing server_name, user_id and password as a parameter
 $connection = @mysql_connect("localhost", "root", "");
 // Selecting Database
-$db = mysql_select_db("#db name", $connection);
+$db = mysql_select_db("spm", $connection);
 
 
-			 	 	 	  $ITM_name = $_POST["ITM_name"];   
-						  $mobile = $_POST["mobile"];   
-						  $email = $_POST["email"];
-						  $password = $_POST["password1"];
-						  $password2 = $_POST["password2"];
+			 	 	 	  $Name = $_POST["ITM_name"];   
+						  $Mobile = $_POST["mobile"];  
+						  //$Company = $_POST["company_name"];
+						  $Email_Itm = $_POST["email"];
+						  $Password = $_POST["password1"];
+						   $Security_ques=$_POST["security_question"];
+						  $Security_ans=$_POST["security_answer"];
+						  $Type	= 'ITM';
 						  
-						  if($password ==  $password2){
+						  
+					
 							  
-							  $insertString = "INSERT INTO #table_name VALUES('ITM_id','$ITM_name','$mobile','$email','$password')";
-
-							 $result = $conn->query($insertString);      
-						 	 if(mysql_error($result)) 
-							 {
-						 	 	     die('Error : '.mysql_error());    
-							 } 
-							 else 
-							 {
-							 	       
-							 	     echo "<script type='text/javascript'>s alert ('Account created successfully.......')</script>"   
-							 } 
-						  }
+							  $insertString1 = "INSERT INTO log VALUES('$Email_Itm','$Password','$Type')";
+							  $insertString = "INSERT INTO it_manager VALUES('$Name','$Mobile','$Email_Itm','$Security_ques','$Security_ans')";
+							 
+							 if(mysql_query($insertString1))
+							{
+								if(mysql_query($insertString ))
+								{
+									//echo 'Successfully Created';
+									header('Location: ITMSignup.html');
+								}
+								else{
+									echo 'Failed supervisor table - '.mysql_error();
+								}
+							}
+							else{
+									echo 'Failed loging table - '.mysql_error();
+								}
+							
+							//if(mysql_query($insertString1) && mysql_query($insertString)){
+								//echo 'Successfully Created';
+						//	}else
+							//	echo 'Failed - '.mysql_error();
+							
 							
 						 	
 					
