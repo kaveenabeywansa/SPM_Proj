@@ -2,7 +2,10 @@
 <?php
     require 'dbconnectionsup.php';
     // check if user has logged in using sessions
-    $sesUser=$_SESSION['login_user'];
+    if(isset($_SESSION['login_user'])){
+        $sesUser=$_SESSION['login_user'];
+    }else
+        $sesUser='admin@a.com';
     $cmpRes =$conn->query("SELECT * 
     FROM supervisor s inner join log l on l.Username=s.Email_supervisor
     WHERE l.Username='$sesUser' LIMIT 1"); // Get email from user sessions
