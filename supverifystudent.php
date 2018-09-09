@@ -8,14 +8,11 @@
     $row = $cmpRes->fetch_assoc();
     $comp = $row['Company'];
     //get data related to the supervisor
-    $results=$conn->query("select * 
-    from student s inner join student_forms sf ON s.Email_student=sf.Email_student
-    inner join supervisor_forms sp ON sp.Email_student=s.Email_student
-    where Company='$comp' AND verfication=1 AND (sp.FormI_6 is null or sp.FormI_6='')");
+    $results=$conn->query("select * from student where Company='$comp' and verfication=0");
 ?>
 <html lang="en">
 <head>
-	<title>Attest Form I-5</title>
+	<title>Supervisor Home</title>
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8" />
@@ -66,8 +63,9 @@
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ml-auto text-center mr-lg-5">
-                    <li class="nav-item mr-lg-2 mb-lg-0 mb-2">
-						<a class="nav-link" href="supverifystudent">Verify Students</a>
+                    <li class="nav-item mr-lg-2 mb-lg-0 mb-2 active">
+						<a class="nav-link" href="supverifystudent">Verify Students
+                        <span class="sr-only">(current)</span></a>
 					</li>
                     <li class="nav-item mr-lg-2 mb-lg-0 mb-2">
 						<a class="nav-link" href="supdowni1form">Fill Form I-1</a>
@@ -75,9 +73,8 @@
 					<li class="nav-item mr-lg-2 mb-lg-0 mb-2">
 						<a class="nav-link" href="supdowni3form">Attest I-3 Forms</a>
 					</li>
-                    <li class="nav-item mr-lg-2 mb-lg-0 mb-2 active">
-						<a class="nav-link" href="supdowni5form">Feedback Form I-5
-                        <span class="sr-only">(current)</span></a>
+                    <li class="nav-item mr-lg-2 mb-lg-0 mb-2">
+						<a class="nav-link" href="supdowni5form">Feedback Form I-5</a>
 					</li>
 					 
 					<!--<li class="nav-item mr-lg-2 mb-lg-0 mb-2">
@@ -91,18 +88,15 @@
         </nav>
         <div class="suphead">
         <center>
-            <h1>Download & Re-Upload I-5 Forms</h1>
+            <h1><?php echo $row['Company'] ?></h1>
         </center>
         </div>
-		<div class="supform" align="right">
-        <div>
-            Download Form I-5 format from here.<a href="uploads/Form I-5.pdf" download><img src="images/doc_icon.png" alt="Download Form" height="50" width="50"></a>
-        </div>
+		<div class="supform">
         <table class="dsptab">
             <tr>
-                <th width="20%">NIC.</th>
+                <th width="20%">NIC</th>
                 <th width="50%">Name</th>
-                <th width="15%">Upload</th>
+                <th width="15%"  class="text-center">Verify</th>
             </tr>
             <?php
             //
@@ -113,25 +107,10 @@
                     echo '<tr>
                         <td>'.$row["NIC_Passport"].'</td>
                         <td>'.$row["First_Name"]." ".$row["Last_Name"].'</td>
-                        
-                        <td><div class="uploaddiv">
-                            <form action="supi5formupload.php" method="post" enctype="multipart/form-data"">
-                                <input type="hidden" name="stdid" id="stdid" value="'.$row["Email_student"].'">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <input type="file" name="fileToUpload" id="fileToUpload" onchange="clicked(this,'.$count.')">
-                                        </td>
-                                    </tr>
-                                    <tr><td></td></tr>
-                                    <tr>
-                                        <td>
-                                            <input type="submit" value="Upload Form I-3" name="submit" id="formuploadbtn'.$count.'">
-                                        </td>
-                                    </tr>
-                                </table>
-                            </form>
-                            </div>
+                        <td>
+                            <center>
+                                <a href="supverifystd.php?email='.$row["Email_student"].'" ><img src="images/verify.png" alt="Download Form" height="50" width="50"></as>
+                            </center>
                         </td>
                     </tr>';
                 }

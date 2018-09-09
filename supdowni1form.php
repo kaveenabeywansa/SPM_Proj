@@ -2,10 +2,16 @@
 <?php
     require 'dbconnectionsup.php';
     // check if user has logged in using sessions
-
+    $cmpRes =$conn->query("SELECT * 
+    FROM supervisor s inner join log l on l.Username=s.Email_supervisor
+    WHERE l.Username='admin@a.com' LIMIT 1"); // Get email from user sessions
+    $row = $cmpRes->fetch_assoc();
+    $comp = $row['Company'];
     //get data related to the supervisor
-    $comp = "Shit hole"; // get current supervisors company from sessions
-    $results=$conn->query("select * from student where Company='$comp' and verfication=1");
+    $results=$conn->query("select * 
+    from student s inner join student_forms sf ON s.Email_student=sf.Email_student
+    inner join supervisor_forms sp ON sp.Email_student=s.Email_student
+    where Company='$comp' AND verfication=1 AND sf.FormI_1 is not null and (sp.FormI_1 is null or sp.FormI_1='')");
 ?>
 <html lang="en">
 <head>
@@ -61,7 +67,7 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ml-auto text-center mr-lg-5">
                     <li class="nav-item mr-lg-2 mb-lg-0 mb-2">
-						<a class="nav-link" href="">Verify Students</a>
+						<a class="nav-link" href="supverifystudent">Verify Students</a>
 					</li>
                     <li class="nav-item mr-lg-2 mb-lg-0 mb-2 active">
 						<a class="nav-link" href="supdowni1form">Fill Form I-1
