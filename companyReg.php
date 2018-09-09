@@ -1,12 +1,8 @@
-<?php
-	session_start();
-	//Looking for autherized user
-	if(isset($_SESSION['username'])){	
-?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<title>Form Submission</title>
+	<title>Company Registration</title>
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8" />
@@ -18,7 +14,7 @@
 	<!-- Bootstrap-Core-CSS -->
 	<link rel="stylesheet" href="css/lightbox.css">
 	<!-- gallery light box -->
-	<link rel="stylesheet" href="css/style1_v.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/style1.css" type="text/css" media="all" />
 	<!-- Style-CSS -->
 	<link rel="stylesheet" href="css/fontawesome-all.css">
 	<!-- Font-Awesome-Icons-CSS -->
@@ -32,8 +28,6 @@
 </head>
 
 <body class="container-fluid">
-	<!-- header -->
-		<!-- navbar -->
 		<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
 			<a class="navbar-brand" href="index.html">
 				<span>I</span>ntern<span>s</span>hip</a>
@@ -47,24 +41,22 @@
 					<li class="nav-item mr-lg-2 mb-lg-0 mb-2">
 						<a class="nav-link" href="#profile">Profile</a>
 					</li>
-					<li class="nav-item mr-lg-2 mb-lg-0 mb-2">
-						<a class="nav-link" href="schedule.php">Viva Schedule</a>
-					</li>
 					<li class="nav-item mr-lg-2 mb-lg-0 mb-2 active">
-						<a class="nav-link" href="forms.html">Form Submission
-                            <span class="sr-only">(current)</span>
-                        </a>
+						<a class="nav-link" href="companyReg.php">Company
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+					<li class="nav-item mr-lg-2 mb-lg-0 mb-2">
+						<a class="nav-link" href="#services">I-3 form</a>
+					</li>
+					<li class="nav-item mr-lg-2 mb-lg-0 mb-2">
+						<a class="nav-link" href="#team">I-5 form</a>
+					</li>
+					<li class="nav-item mr-lg-2 mb-lg-0 mb-2">
+						<a class="nav-link" href="#contact">Contact Us</a>
 					</li>
 					<li class="nav-item">
-					<!-- To check whether the user has logged in or not -->
-					<?php
-							if(isset($_SESSION['username'])){
-								echo '<a class="nav-link" href="logout_v.php">Log Out</a>';
-							}
-							else{
-								echo '<a class="nav-link" href="login.html">Sign In | Sign Up</a>';
-							}
-						?>
+						<a class="nav-link" href="login.html">Sign In | Sign Up</a>
 					</li>
 				</ul>
 			</div>
@@ -73,45 +65,38 @@
 			<div class="container py-xl-5 py-lg-5">
 			<section class="login-wrap">
 				<div class="main_w3agile">
-					<h1 style="font: 25px bold black;">Form I-1 Submission</h1>
 					<div class="login-form">
-						<!-- Forms to submit -->
-						<form method="post" action="dbAction.php" enctype="multipart/form-data">
+						<form method="post" action="#">
 							<div class="group">
-								<input type="file" size="500" class="input" id="doc1" name="doc1">
+								<label for="user" class="label">Username</label>
+								<input id="user" type="text" class="input" required>
 							</div>
 							<div class="group">
-								<input type="submit" class="button" value="Submit" name="submit1" onclick="return confirm('Are you sure?');">
-							</div>
-                            <div class="hr"></div>
-                            <h1 style="font: 25px bold black;">Form I-3 Submission</h1>
-                            <div class="group">
-								<input type="file" size="50" class="input" id="doc3" name="doc3">
-							</div>
-							<div class="group">
-								<input type="submit" class="button" value="Submit" name="submit3" onclick="return confirm('Are you sure?');">
-                            </div>
-                            <div class="hr"></div>
-                            <h1 style="font: 25px bold black;">Form I-6 Submission</h1>
-                            <div class="group">
-								<input type="file" size="50" class="input" id="doc6" name="doc6">
+								<label for="company" class="label">Company Name</label>
+								<select id="company" value="Company" class="input" required>
+									<option>Hello</option>
+									<option>How</option>
+									<option>Are</option>
+									<option>You?</option>
+								</select>
 							</div>
 							<div class="group">
-								<input type="submit" class="button" value="Submit" name="submit6" onclick="return confirm('Are you sure?');">
+								<label for="password" class="label">Password</label>
+								<input id="password" type="password" class="input" required>
+							</div>
+							<div class="group">
+								<input type="submit" class="button" value="Allocate">
+							</div>
+							<div class="hr"></div>
+							<div class="foot-lnk">
+								<h2><a href="#">Forgot Password?</a></h2>
 							</div>
 						</form>
-						<!-- /Form to submit -->
 					</div>
 				</div>
     		</section>
 			<div>
 		<div>
-</body>
-</html>
-<?php
-	}
-	else{
-		//
-		header("location:/SPM_Proj/index.html");
-	}
-?>
+
+	</body>
+	</html>

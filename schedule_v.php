@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Form Submission</title>
+	<title>View Schedule</title>
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8" />
@@ -48,10 +48,10 @@
 						<a class="nav-link" href="#profile">Profile</a>
 					</li>
 					<li class="nav-item mr-lg-2 mb-lg-0 mb-2">
-						<a class="nav-link" href="#">Form Submission</a>
+						<a class="nav-link" href="forms_v.php">Form Submission</a>
 					</li>
 					<li class="nav-item mr-lg-2 mb-lg-0 mb-2 active">
-						<a class="nav-link" href="viva_schedule_v.php">Viva Schedule
+						<a class="nav-link" href="schedule.php">Viva Schedule
                             <span class="sr-only">(current)</span>
                         </a>
 					</li>
@@ -70,35 +70,33 @@
 		</nav>
 		<div class="container py-xl-5 py-lg-5">
 			<div class="container py-xl-5 py-lg-5">
-			<section class="login-wrap1">
-				<div class="main_w3agile1">
-					<h1 style="font: 25px bold black;margin-left:40px;">Viva Schedule</h1>
+			<section class="login-wrap">
+				<div class="main_w3agile">
+					<h1 style="font: 25px bold black;">Viva Schedule</h1>
 					<div class="login-form">
                     <table class="table">
                         <thead>
                             <tr>
 								<th scope="col">#</th>
-                                <th scope="col">Username</th>
+                                <th scope="col">Name</th>
                                 <th scope="col">Date</th>
                                 <th scope="col">Time</th>
                                 <th scope="col">Venue</th>
                             </tr>
                         </thead>
                         <tbody>
-                        <?php
-                                $query="select s.First_Name as FN,s.Email_student as ES from student_forms st,student s where st.Email_student=s.Email_student and st.FormI_7 <> 'null'";
+                            <?php
+                                $query="select v.Email_student as ES,v.Date as Date,v.Time as Time,v.Venue as Venue from viva v,student s where v.Email_student=s.Email_student"; 
 								$result=mysqli_query($con,$query);
 								$i=1;
                                 while($row=mysqli_fetch_array($result)){
-									echo '<tr>
+                                   echo '<tr>
 										<form method="post" action="dbAction.php">
 											<th scope="row">'.($i++).'</th>
-											<td>'.$row['FN'].'</td>
-											<input name="name" value="'.$row['ES'].'" style="display:none;">
-											<td><input name="date" id="date" type="date" class="input" required></td>
-											<td><input name="time" id="time" min="9:00" max="18:00" type="time" class="input" style="width:100px;" required></td>
-											<td><input name="venue" id="venue" type="text" class="input" style="width:100px;" required></td>
-											<td><input type="submit" class="button" name="schedule" value="Schedule"></td>
+											<td>'.$row['ES'].'</td>
+											<td>'.$row['Date'].'</td>
+											<td>'.$row['Time'].'</td>
+											<td>'.$row['Venue'].'</td>
 										</form>
                                     </tr>';
                                 }
@@ -115,6 +113,6 @@
 <?php
 	}
 	else{
-		header("location:/SPM_Proj/index.html");
+		header("Location: http://localhost/SPM_Proj/index.html");
 	}
 ?>

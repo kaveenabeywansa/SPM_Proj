@@ -1,12 +1,3 @@
-/*--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
---*/
-
-/*-- Reset Code --*/
-
 body {
     padding: 0;
     margin: 0;
@@ -277,6 +268,16 @@ a.w3_agile_facebook:hover {
     background: #3b5998;
     border-color: #3b5998;
 }
+body {
+    background: url(../images/banner.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Dosis', sans-serif;
+}
 
 a.agile_twitter:hover {
     background: #1da1f2;
@@ -310,16 +311,17 @@ a.w3_agile_google:hover {
     letter-spacing: 1px;
 }
 
-.copy-wthree p a {
-    color: #8BC34A;
 /*-- //gallery --*/
 
 /*-- stats --*/
-}
+
 .numscroller {
     font-size: 46px;
     color: #8BC34A;
     text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.66);
+}
+.copy-wthree p a {
+    color: #8BC34A;
 }
 
 .right-text-about p {
@@ -449,6 +451,7 @@ a.w3_agile_google:hover {
     font-size: 1.5em;
     font-weight: normal;
     margin-top: 5px;
+    border-color: #8BC34A;
 }
 
 .view-caption .w3ls-info p {
@@ -585,6 +588,9 @@ h4.contact-title {
     -o-transition: .5s ease-in;
     -ms-transition: .5s ease-in;
 }
+.login-form .group .button {
+    background: #8BC34A;
+}
 
 /*-- //contact --*/
 
@@ -596,6 +602,9 @@ h3.tittle {
     font-size: 40px;
     letter-spacing: 1px;
     z-index: 1;
+    display: inline-block;
+    background: #8BC34A;
+    margin-right: 5px;
 }
 
 h3.tittle span {
@@ -641,6 +650,9 @@ h2.video-agile {
     border: none;
     text-indent: 100%;
     background: url(../images/move-top.png) no-repeat 0px 0px;
+}
+.login-form .group .check:checked+label .icon {
+    background: #8BC34A;
 }
 
 #toTopHover {
@@ -822,6 +834,74 @@ h2.video-agile {
         padding: 0 1em;
     }
 }
+.navbar-light .navbar-brand {
+    color: #fff;
+    font-size: 48px;
+    font-family: 'Acme', sans-serif;
+    padding: 0;
+}
+
+a.navbar-brand span,
+.w3l-footer h1 a span {
+    color: #8BC34A;
+}
+
+nav.navbar.navbar-expand-lg.navbar-light.bg-light {
+    padding: 0 1rem;
+    background: #eee;
+    box-shadow: 1px 2px 2px 1px rgba(12, 12, 12, 0.11);
+}
+
+.bg-light {
+    background-color: rgba(0, 0, 0, 0.28) !important;
+}
+
+.navbar-light .navbar-brand:hover,
+.navbar-light .navbar-brand:focus {
+    color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #fff;
+    letter-spacing: 1px;
+    padding: 26px 20px;
+    font-size: 15px;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+
+.navbar-light .navbar-nav .show>.nav-link,
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link.active {
+    color: #fff;
+    background: #F44336;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus {
+    color: #fff;
+    background: #F44336;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+
+.dropdown-menu {
+    left: -32px;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    background-color: #F44336;
+}
+
+/* -- Responsive code -- */
 
 @media(max-width: 640px) {
     .numscroller {
@@ -1093,3 +1173,130 @@ h2.video-agile {
 }
 
 /*--//responsive--*/
+/* -- //Responsive code -- */
+
+.main_w3agile1 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.83);
+    -webkit-box-shadow: 0px 6px 11px 1px rgba(0, 0, 0, 0.17);
+    -moz-box-shadow: 0px 6px 11px 1px rgba(0, 0, 0, 0.17);
+    box-shadow: 12px -12px 0px 0px rgba(251, 251, 251, 0.24);
+}
+.login-wrap1 {
+    margin: auto;
+    max-width: 725px;
+    min-height: 725px;
+    position: relative;
+    background: url(../images/banner.jpg) no-repeat center;
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+}
+.title-agile{
+	margin-top: 80px;
+	
+}
+
+.w3l-footer h1 a {
+    font-size: 40px;
+    font-family: 'Acme', sans-serif;
+    color: #000;
+}
+
+.w3l-footer h3 {
+    font-size: 26px;
+    color: #000;
+}
+
+.w3l-footer p {
+    font-size: 14px;
+}
+
+.w3l-footer ul li {
+    list-style: none;
+    font-size: 14px;
+}
+
+.w3l-footer ul li a {
+    color: #999;
+}
+
+.w3l-footer ul li i {
+    color: #f44336;
+    line-height: 2;
+}
+
+p.copy-right-grids {
+    font-size: 14px;
+}
+
+p.copy-right-grids a {
+    color: #f44336;
+}
+
+/*-- social-icons --*/
+
+.agileits_social_list li {
+    display: inline-block;
+}
+
+.agileits_social_list li a {
+    width: 35px;
+    height: 35px;
+    color: #000;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    line-height: 2.3;
+    border: 1px solid #e6e6e6;
+}
+
+.agileits_social_list li a:hover {
+    color: #fff;
+}
+
+a.w3_agile_facebook:hover {
+    background: #3b5998;
+    border-color: #3b5998;
+}
+
+a.agile_twitter:hover {
+    background: #1da1f2;
+    border-color: #1da1f2;
+}
+
+a.w3_agile_dribble:hover {
+    background: #ea4c89;
+    border-color: #ea4c89;
+}
+
+a.w3_agile_google:hover {
+    background: #F44336;
+    border-color: #F44336;
+}
+
+#toTop {
+    display: none;
+    text-decoration: none;
+    position: fixed;
+    bottom: 24px;
+    right: 3%;
+    overflow: hidden;
+    z-index: 999;
+    width: 32px;
+    height: 32px;
+    border: none;
+    text-indent: 100%;
+    background: url(../images/move-top.png) no-repeat 0px 0px;
+}
+
+#toTopHover {
+    width: 32px;
+    height: 32px;
+    display: block;
+    overflow: hidden;
+    float: right;
+    opacity: 0;
+    -moz-opacity: 0;
+    filter: alpha(opacity=0);
+}
