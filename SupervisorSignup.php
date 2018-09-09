@@ -11,7 +11,7 @@ $db = mysql_select_db("spm", $connection);
 						  $Password = $_POST["password1"];
 						  $Security_ques=$_POST["security_question"];
 						  $Security_ans=$_POST["security_answer"];
-						 // $Type	= $_GET["Type"];
+						  $Type	= 'supervisor';
 						  
 						
 							$insertString1 = "INSERT INTO log VALUES('$Email_supervisor','$Password','$Type')";
