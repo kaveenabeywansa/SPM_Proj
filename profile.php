@@ -84,7 +84,7 @@ include('session_connect.php')
 
 <div class="title-agile">
 
-        <h1 class="title-agile text-center">Student Profile</h1>
+        <h1 class="title-agile text-center">Profile</h1>
     
 	</div>
 	 <section class="login-wrap">
@@ -96,9 +96,29 @@ include('session_connect.php')
                 <!-- profile  -->
                 <div class="signup_wthree">
                     <?php
+					if($Userype == "student"){
 					echo "<h1>"."Student profile"."</h1>"."<br/>"."<br/>";
-					echo "Name				:"."<br/>"."<br/>";
-					echo "IT number 		:"."<br/>";
+					echo "First Name				:".$fname."<br/>"."<br/>";
+					echo "Last Name				    :".$lname."<br/>"."<br/>";
+					echo "NIC				        :". $nic."<br/>"."<br/>";
+					echo "email				        :".$email."<br/>"."<br/>";
+					echo "mobile				    :".$mobile."<br/>"."<br/>";
+					echo "company				    :".$company."<br/>"."<br/>";
+					echo "address				    :".$address."<br/>"."<br/>";
+					echo "grading				    :".$grading."<br/>"."<br/>";
+					}
+					else if($Userype == "supervisor"){
+						echo "<h1>"."Supervisor profile"."</h1>"."<br/>"."<br/>";
+					echo "Email						:".$email."<br/>"."<br/>";
+					echo "Company				    :".$company."<br/>"."<br/>";
+					echo "Mobile				    :".$mobile."<br/>"."<br/>";
+					}
+					else{
+						echo "<h1>"."ITM profile"."</h1>"."<br/>"."<br/>";
+					echo "Name						:".$name."<br/>"."<br/>";
+					echo "Mobile				    :".$mobile."<br/>"."<br/>";
+					echo "email				        :".$Email_itm."<br/>"."<br/>";
+					}
 					?>
                 </div>
                 <!-- //profile -->
