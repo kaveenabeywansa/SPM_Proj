@@ -1,9 +1,6 @@
-/*--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
---*/
+/*
+CSS File
+*/
 
 /*-- Reset Code --*/
 
@@ -374,6 +371,11 @@ a.w3_agile_google:hover {
     background-color: #FFF;
     display: block;
     overflow: hidden;
+}
+.login-wrap {
+    margin: auto;
+    max-width: 1000px;
+    min-height: 725px;
     position: relative;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -1094,4 +1096,4 @@ h2.video-agile {
     }
 }
 
-/*--//responsive--*/
+/* -- //Responsive code -- */
