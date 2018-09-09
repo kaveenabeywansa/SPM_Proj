@@ -6,7 +6,7 @@ CSS File
 .dash-wrap {
     margin: auto;
     max-width: 800px;
-    min-height: 725px;
+    min-height: 500px;
     position: relative;
     background: url(../images/banner.jpg) no-repeat center;
     box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
@@ -22,7 +22,7 @@ CSS File
 
   background-color: #f2f2f2;
   color: #333333;
-
+  top:100px;
 
 }
 .dash-button a{
@@ -32,19 +32,78 @@ CSS File
   display: inline;
   grid-gap: 10px;
 }
-.grid-item a{
+.grid-item-student a{
   border: 1px solid rgba(0, 0, 0, 0.8);
   text-align: center;
   background-color: #f2f2f2;
   color: #333333;
-  border-radius: 25px;
-  padding-top: 50px;
-  padding-right: 50px;
-  padding-bottom: 50px;
-  padding-left: 50px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  padding-top: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  box-shadow: inset 0px -2px 1px rgba(0,0,0,0.8),
+  inset 0 2px 1px rgba(255,255,255,1);
+  content:url(studentMale.jpg);
+
+}
+.grid-item-supervisor a{
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  text-align: center;
+  background-color: #f2f2f2;
+  color: #333333;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  padding-top: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  box-shadow: inset 0px -2px 1px rgba(0,0,0,0.8),
+  inset 0 2px 1px rgba(255,255,255,1);
+  content:url(supervisor.jpg);
+
+}
+.grid-item-itm a{
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  text-align: center;
+  background-color: #f2f2f2;
+  color: #333333;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  padding-top: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  box-shadow: inset 0px -2px 1px rgba(0,0,0,0.8),
+  inset 0 2px 1px rgba(255,255,255,1);
+  content:url(lecturer.jpg);
+
+}
+.grid-item-home a{
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  text-align: center;
+  background-color: #f2f2f2;
+  color: #333333;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  padding-top: 30px;
+  padding-right: 100px;
+  padding-bottom: 30px;
+  padding-left: 100px;
+  box-shadow: inset 0px -2px 1px rgba(0,0,0,0.8),
+  inset 0 2px 1px rgba(255,255,255,1);
 
 
 }
+div.dashImage {
+   content:url(http://placehold.it/350x150);
+}​
+
 html,
 body,
 div,
@@ -377,23 +436,9 @@ a {
     box-shadow: 12px -12px 0px 0px rgba(251, 251, 251, 0.24);
 }
 
-.main_w3agile .signin_wthree,
-.main_w3agile .signup_wthree {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    position: absolute;
-    transform: rotateY(180deg);
-    backface-visibility: hidden;
-    transition: all .4s linear;
-}
 
-.main_w3agile .sign-in,
-.main_w3agile .sign-up,
-.login-form .group .check {
-    display: none;
-}
+
+
 
 .main_w3agile .tab {
     font-size: 22px;
@@ -514,15 +559,6 @@ a {
     -webkit-transform: scale(1) rotate(-45deg);
 }
 
-.main_w3agile .sign-in:checked+.tab+.sign-up+.tab+.login-form .signin_wthree {
-    transform: rotate(0);
-    -ms-transform: rotate(0);
-    -webkit-transform: rotate(0);
-}
-
-.main_w3agile .sign-up:checked+.tab+.login-form .signup_wthree {
-    transform: rotate(0);
-}
 
 .hr {
     height: 2px;
