@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	//Looking for autherized user
-	if(isset($_SESSION['username'])){	
+	if(isset($_SESSION['login_user'])){	
 ?>
 <!DOCTYPE html>
 <html lang="en">
