@@ -81,7 +81,7 @@
 						<a class="nav-link" href="formI-6.php">I-6 form</a>
 					</li> -->
 					<li class="nav-item">
-						<a class="nav-link" href="index.html">Sign In | Sign Out</a>
+						<a class="nav-link" href="index.html">Sign Out</a>
 					</li>
 				</ul>
 			</div>
