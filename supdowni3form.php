@@ -15,7 +15,7 @@
     $results=$conn->query("select * 
     from student s inner join student_forms sf ON s.Email_student=sf.Email_student
     inner join supervisor_forms sp ON sp.Email_student=s.Email_student
-    where Company='$comp' AND verfication=1 AND sf.FormI_3 is not null and (sp.FormI_3 is null or sp.FormI_3='')");
+    where Company='$comp' AND verfication=1 AND sf.FormI_3_Up is not null and (sp.FormI_3 is null or sp.FormI_3='')");
 ?>
 <html lang="en">
 <head>
@@ -88,7 +88,7 @@
 						<a class="nav-link" href="formI-6.php">I-6 form</a>
 					</li> -->
 					<li class="nav-item">
-						<a class="nav-link" href="login.html">Sign In | Sign Up</a>
+                        <a class="nav-link" href="index.html">Sign In | Sign Out</a>
 					</li>
 				</ul>
 			</div>
