@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Internship Management System</title>
+    <!-- Meta-Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //Meta-Tags -->
+    <!-- Index-Page-CSS -->
+    <link rel="stylesheet" href="css/style_s.css" type="text/css" media="all">
+    <!-- onlinefonts -->
+    <link href="//fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800" rel="stylesheet">
+    <!-- //Custom-Stylesheet-Links -->
+</head>
+
+<body>
+    <header>
+        <h1 class="title-agile text-center">USER DASHBOARD</h1>
+    </header>
+    <!-- //header -->
+    <section class="dash-wrap">
+        <div class="main_w3agile">
+          <div class="grid-container" style=" margin-top: 50px;">
+            <div class="grid-item-student" >
+              <div class="dash-button" style="display:inline;float:left;">
+                <a href="#" >Student</a>
+              </div>
+            </div>
+            <div class="grid-item-supervisor">
+              <div class="dash-button" style="display:inline;float:left;margin-right:80px;margin-left:80px;">
+                <a href="#" >Supervisor</a>
+              </div>
+            </div>
+            <div class="grid-item-itm">
+              <div class="dash-button" style="display:inline;">
+                <a href="#" >ITM</a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-container" style=" margin-top: 80px;">
+            <div class="grid-item-home" >
+              <div class="dash-button" style="display:inline;margin-left:200px;margin-right:200px;">
+                <a href="#" >HOME</a>
+              </div>
+            </div>
+          </div>
+          </div>
+    </section>
+    <!-- //section -->
+    <footer>
+        <div class="copy-wthree text-center">
+            <p>
+            </p>
+        </div>
+    </footer>
+    <!-- //footer -->
+    <!-- script for password match -->
+    <script>
+        window.onload = function () {
+            document.getElementById("password1").onchange = validatePassword;
+            document.getElementById("password2").onchange = validatePassword;
+        }
+
+        function validatePassword() {
+            var pass2 = document.getElementById("password2").value;
+            var pass1 = document.getElementById("password1").value;
+            if (pass1 != pass2)
+                document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+            else
+                document.getElementById("password2").setCustomValidity('');
+        }
+    </script>
+    <!-- script for password match -->
+</body>
+<!-- //Body -->
+
+</html>
