@@ -1,7 +1,7 @@
 <?php
     session_start();
 	include('dbconnect_v.php');
-	if(isset($_SESSION['username'])){	
+	if(isset($_SESSION['login_user'])){	
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,8 +34,7 @@
 	<!-- header -->
 		<!-- navbar -->
 		<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="index.html">
-				<span>I</span>ntern<span>s</span>hip</a>
+			<a class="navbar-brand" href="index.html"><span>I</span>ntern<span>s</span>hip</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
 			 aria-expanded="false" aria-label="Toggle navigation">
 				<i class="fas fa-bars"></i>
@@ -81,6 +80,7 @@
                                 <th scope="col">Date</th>
                                 <th scope="col">Time</th>
                                 <th scope="col">Venue</th>
+								
                             </tr>
                         </thead>
                         <tbody>
